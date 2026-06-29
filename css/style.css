@@ -1008,19 +1008,20 @@ button:focus-visible {
 /* ---------- Depoimentos ---------- */
 .depoimentos {
     background: var(--color-primary);
+    padding: 60px 0;
 }
 
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Default para desktop 1200px+ */
-    gap: 24px;
+    gap: 16px;
 }
 
 .testimonial-card {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-md);
-    padding: 28px;
+    padding: 20px;
     transition: transform 200ms, box-shadow 200ms, background-color 200ms;
 }
 [data-theme='dark'] .testimonial-card {
@@ -1045,7 +1046,7 @@ button:focus-visible {
 .testimonial-stars {
     color: var(--color-accent);
     font-size: 1.2rem;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     letter-spacing: 3px;
 }
 
@@ -1053,7 +1054,7 @@ button:focus-visible {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.7;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-style: italic;
 }
 [data-theme='dark'] .testimonial-text {
@@ -1063,7 +1064,7 @@ button:focus-visible {
 .testimonial-author {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .testimonial-author img {
