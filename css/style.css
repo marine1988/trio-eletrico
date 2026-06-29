@@ -1091,6 +1091,7 @@ button:focus-visible {
 /* ---------- FAQ ---------- */
 .faq {
     background: var(--color-white);
+    padding: 60px 0;
 }
 
 /* Dark mode: secções com fundo branco → usar variável de tema (fix #4) */
@@ -1163,12 +1164,13 @@ button:focus-visible {
     max-width: 750px;
     margin: 0 auto;
     display: grid;
-    gap: 12px;
+    gap: 8px;
 }
 
 .faq-item {
     border: 1px solid var(--color-gray-200);
     border-radius: var(--radius-sm);
+    padding: 16px;
     overflow: hidden;
     transition: border-color 200ms, box-shadow 200ms;
 }
@@ -1263,12 +1265,13 @@ button:focus-visible {
 /* ---------- Contacto ---------- */
 .contacto {
     background: var(--bg-secondary);
+    padding: 60px 0;
 }
 
 .contacto-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Default para desktop */
-    gap: 40px;
+    gap: 24px;
 }
 
 .contacto-info {
@@ -1316,7 +1319,7 @@ button:focus-visible {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 14px 18px;
+    padding: 16px;
     background: var(--color-white);
     border-radius: var(--radius-sm);
     box-shadow: var(--shadow-sm);
@@ -1374,7 +1377,7 @@ button:focus-visible {
 }
 
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 }
 
 .form-group label {
