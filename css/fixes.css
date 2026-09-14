@@ -1,0 +1,133 @@
+/* ============================================
+   Trio Elétrico — Spacing & Padding Fixes
+   Carregado depois de style.v1.min.css
+   ============================================ */
+
+/* --- Services Grid (O que Fazemos) --- */
+.services-grid {
+    gap: 2rem !important;
+}
+
+.service-card {
+    padding: 2rem !important;
+}
+
+/* --- Diferenciais Grid (Porquê Nós) --- */
+.features-grid {
+    gap: 2rem !important;
+}
+
+.features-grid > * {
+    padding: 1.5rem !important;
+}
+
+/* --- Onde Atuamos --- */
+.areas-grid {
+    gap: 2.5rem !important;
+}
+
+/* --- Depoimentos / Testimonials --- */
+.carousel-wrapper {
+    gap: 2rem !important;
+}
+
+.carousel-wrapper > * {
+    padding: 1.5rem !important;
+}
+
+/* --- FAQ --- */
+#faq .container > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem !important;
+}
+
+#faq details, #faq .faq-item, #faq [class*="faq-"] {
+    padding: 1.25rem 1.5rem !important;
+}
+
+/* --- Galeria --- */
+#galeria .container > div:last-child {
+    gap: 1.5rem !important;
+}
+
+/* --- Contacto --- */
+#contacto .container {
+    gap: 3rem !important;
+}
+
+/* --- Footer --- */
+footer {
+    padding: 3rem 0 1.5rem !important;
+}
+
+footer .container > div {
+    gap: 2.5rem !important;
+}
+
+/* --- Hero spacing refinements --- */
+.hero-stats {
+    gap: 1.5rem !important;
+    margin-top: 2rem !important;
+}
+
+.hero-trust-strip {
+    gap: 1.5rem !important;
+    padding: 1rem 0 !important;
+}
+
+.hero-actions {
+    gap: 1.25rem !important;
+}
+
+/* --- Section spacing --- */
+section {
+    padding: 5rem 0 !important;
+}
+
+.section-header {
+    margin-bottom: 3rem !important;
+}
+
+/* ============================================
+   CORREÇÕES DE BUGS VISUAIS (t_24b449e3)
+   ============================================ */
+
+/* 1. WHATSAPP COLADO — afastar do canto */
+.whatsapp-wrapper {
+    bottom: 32px !important;
+    right: 32px !important;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-wrapper {
+        bottom: 24px !important;
+        right: 24px !important;
+    }
+}
+
+/* 2. GALERIA VAZIA — background e border nos itens */
+.gallery-item {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--color-gray-200) !important;
+}
+
+/* 3. DEPOIMENTOS SEM PADDING — padding lateral na secção + padding no card */
+.depoimentos {
+    padding: 80px 20px 60px !important;
+}
+
+.testimonial-card {
+    padding: 24px !important;
+}
+
+/* 4. HERO COLADO AO HEADER — aumentar padding-top para compensar header fixed (70px) */
+.hero {
+    padding-top: 120px !important;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 80px !important;
+    }
+}

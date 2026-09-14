@@ -1,0 +1,25 @@
+{
+  "name": "trio-eletrico",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Site profissional de uma página para a empresa **Trio Elétrico**, uma empresa de eletricidade com 3 sócios eletricistas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --reporter=list"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@playwright/test": "^1.61.1"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "playwright": "^1.61.1",
+    "playwright-core": "^1.61.1",
+    "terser": "^5.48.0"
+  }
+}

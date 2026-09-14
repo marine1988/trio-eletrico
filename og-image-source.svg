@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#0A2540"/>
+  <rect x="0" y="580" width="1200" height="50" fill="#FFC107"/>
+  <!-- Lightning bolt -->
+  <polygon points="560,120 480,310 540,310 500,510 660,260 590,260 640,120" fill="#FFC107"/>
+  <!-- Company name -->
+  <text x="740" y="260" font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="72" fill="#FFFFFF">Trio Elétrico</text>
+  <!-- Tagline -->
+  <text x="740" y="330" font-family="Arial,Helvetica,sans-serif" font-size="28" fill="#FFC107">Instalações Eléctricas e Manutenção</text>
+  <!-- Sub tagline -->
+  <text x="740" y="380" font-family="Arial,Helvetica,sans-serif" font-size="22" fill="rgba(255,255,255,0.7)">Residencial · Comercial · Industrial</text>
+</svg>

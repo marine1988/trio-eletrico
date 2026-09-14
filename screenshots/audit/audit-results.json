@@ -1,0 +1,2732 @@
+[
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "hero-actions",
+    "selector": ".hero-actions",
+    "exists": true,
+    "box": {
+      "x": 83,
+      "y": 317.21875,
+      "w": 580,
+      "h": 53.59375
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "580px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "83.0",
+    "distRight": "703.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "hero-btn-primary",
+    "selector": ".hero-actions .btn-primary",
+    "exists": true,
+    "box": {
+      "x": 83,
+      "y": 319.21875,
+      "w": 193,
+      "h": 49.59375
+    },
+    "computed": {
+      "paddingLeft": "30px",
+      "paddingRight": "30px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "193px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "83.0",
+    "distRight": "1090.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "hero-btn-secondary",
+    "selector": ".hero-actions .btn-secondary",
+    "exists": true,
+    "box": {
+      "x": 288,
+      "y": 317.21875,
+      "w": 180,
+      "h": 53.59375
+    },
+    "computed": {
+      "paddingLeft": "30px",
+      "paddingRight": "30px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "180px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "288.0",
+    "distRight": "898.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "hero-stats",
+    "selector": ".hero-stats",
+    "exists": true,
+    "box": {
+      "x": 83,
+      "y": 410.8125,
+      "w": 580,
+      "h": 63.59375
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "580px",
+      "display": "grid",
+      "position": "static"
+    },
+    "distLeft": "83.0",
+    "distRight": "703.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "hero-content",
+    "selector": ".hero-content",
+    "exists": true,
+    "box": {
+      "x": 83,
+      "y": 104.90625,
+      "w": 580,
+      "h": 369.5
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "580px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "83.0",
+    "distRight": "703.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "contacto-form",
+    "selector": ".contacto-form",
+    "exists": true,
+    "box": {
+      "x": 695,
+      "y": 5700.625,
+      "w": 588,
+      "h": 738.875
+    },
+    "computed": {
+      "paddingLeft": "32px",
+      "paddingRight": "32px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "588px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "695.0",
+    "distRight": "83.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "contacto-grid",
+    "selector": ".contacto-grid",
+    "exists": true,
+    "box": {
+      "x": 83,
+      "y": 5700.625,
+      "w": 1200,
+      "h": 738.875
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "1200px",
+      "display": "grid",
+      "position": "static"
+    },
+    "distLeft": "83.0",
+    "distRight": "83.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "btn-full-submit",
+    "selector": ".contacto-form .btn-full, .contacto-form button[type=\"submit\"]",
+    "exists": true,
+    "box": {
+      "x": 728,
+      "y": 6357.5,
+      "w": 522,
+      "h": 49
+    },
+    "computed": {
+      "paddingLeft": "14px",
+      "paddingRight": "14px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "522px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "728.0",
+    "distRight": "116.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "form-input",
+    "selector": ".contacto-form .form-group input",
+    "exists": true,
+    "box": {
+      "x": 728,
+      "y": 5762.671875,
+      "w": 522,
+      "h": 48
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "522px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "728.0",
+    "distRight": "116.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "form-textarea",
+    "selector": ".contacto-form .form-group textarea",
+    "exists": true,
+    "box": {
+      "x": 728,
+      "y": 6209.90625,
+      "w": 522,
+      "h": 128
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "522px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "728.0",
+    "distRight": "116.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "btn-nav",
+    "selector": ".btn-nav",
+    "exists": true,
+    "box": {
+      "x": 1219,
+      "y": 21.203125,
+      "w": 64,
+      "h": 33
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "20px",
+      "marginRight": "0px",
+      "width": "auto",
+      "display": "inline",
+      "position": "relative"
+    },
+    "distLeft": "1219.0",
+    "distRight": "83.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "service-card",
+    "selector": ".service-card:first-child",
+    "exists": true,
+    "box": {
+      "x": 83,
+      "y": 2210.265625,
+      "w": 384,
+      "h": 215.25
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "384px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "83.0",
+    "distRight": "899.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "society-card",
+    "selector": ".society-card:first-child",
+    "exists": true,
+    "box": {
+      "x": 83,
+      "y": 1151.859375,
+      "w": 389.328125,
+      "h": 685.078125
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "389.328px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "83.0",
+    "distRight": "893.7",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "feature-card",
+    "selector": ".feature-card:first-child",
+    "exists": true,
+    "box": {
+      "x": 83,
+      "y": 3579.78125,
+      "w": 389.328125,
+      "h": 198.6875
+    },
+    "computed": {
+      "paddingLeft": "20px",
+      "paddingRight": "20px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "389.328px",
+      "display": "flex",
+      "position": "relative"
+    },
+    "distLeft": "83.0",
+    "distRight": "893.7",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "whatsapp-float",
+    "selector": ".whatsapp-float",
+    "exists": true,
+    "box": {
+      "x": 1282,
+      "y": 684,
+      "w": 60,
+      "h": 60
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "60px",
+      "display": "flex",
+      "position": "fixed"
+    },
+    "distLeft": "1282.0",
+    "distRight": "24.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "container",
+    "selector": ".container:first-of-type",
+    "exists": true,
+    "box": {
+      "x": 43,
+      "y": 16,
+      "w": 1280,
+      "h": 44
+    },
+    "computed": {
+      "paddingLeft": "40px",
+      "paddingRight": "40px",
+      "marginLeft": "43px",
+      "marginRight": "43px",
+      "width": "1280px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "43.0",
+    "distRight": "43.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "desktop",
+    "element": "body",
+    "selector": "body",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 0,
+      "w": 1366,
+      "h": 6840.03125
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "1366px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "desktop",
+    "element": "contacto-form",
+    "selector": ".contacto-form",
+    "exists": true,
+    "box": {
+      "x": 695,
+      "y": 100,
+      "w": 588,
+      "h": 680.21875
+    },
+    "computed": {
+      "paddingLeft": "32px",
+      "paddingRight": "32px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "588px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "695.0",
+    "distRight": "83.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "desktop",
+    "element": "contacto-grid",
+    "selector": ".contacto-grid",
+    "exists": true,
+    "box": {
+      "x": 83,
+      "y": 100,
+      "w": 1200,
+      "h": 680.21875
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "1200px",
+      "display": "grid",
+      "position": "static"
+    },
+    "distLeft": "83.0",
+    "distRight": "83.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "desktop",
+    "element": "btn-full-submit",
+    "selector": ".contacto-form .btn-full, .contacto-form button[type=\"submit\"]",
+    "exists": true,
+    "box": {
+      "x": 728,
+      "y": 698.21875,
+      "w": 522,
+      "h": 49
+    },
+    "computed": {
+      "paddingLeft": "14px",
+      "paddingRight": "14px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "522px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "728.0",
+    "distRight": "116.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "desktop",
+    "element": "form-input",
+    "selector": ".contacto-form .form-group input",
+    "exists": true,
+    "box": {
+      "x": 728,
+      "y": 200.4375,
+      "w": 522,
+      "h": 48
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "522px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "728.0",
+    "distRight": "116.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "desktop",
+    "element": "form-textarea",
+    "selector": ".contacto-form .form-group textarea",
+    "exists": true,
+    "box": {
+      "x": 728,
+      "y": 558.625,
+      "w": 522,
+      "h": 120
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "522px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "728.0",
+    "distRight": "116.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "desktop",
+    "element": "btn-nav",
+    "selector": ".btn-nav",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "desktop",
+    "element": "service-card",
+    "selector": ".service-card:first-child",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "desktop",
+    "element": "society-card",
+    "selector": ".society-card:first-child",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "desktop",
+    "element": "feature-card",
+    "selector": ".feature-card:first-child",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "desktop",
+    "element": "whatsapp-float",
+    "selector": ".whatsapp-float",
+    "exists": true,
+    "box": {
+      "x": 1282,
+      "y": 684,
+      "w": 60,
+      "h": 60
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "60px",
+      "display": "flex",
+      "position": "fixed"
+    },
+    "distLeft": "1282.0",
+    "distRight": "24.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "desktop",
+    "element": "container",
+    "selector": ".container:first-of-type",
+    "exists": true,
+    "box": {
+      "x": 43,
+      "y": 16,
+      "w": 1280,
+      "h": 44
+    },
+    "computed": {
+      "paddingLeft": "40px",
+      "paddingRight": "40px",
+      "marginLeft": "43px",
+      "marginRight": "43px",
+      "width": "1280px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "43.0",
+    "distRight": "43.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "desktop",
+    "element": "body",
+    "selector": "body",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 0,
+      "w": 1366,
+      "h": 1574.15625
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "1366px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "hero-actions",
+    "selector": ".hero-actions",
+    "exists": true,
+    "box": {
+      "x": 28,
+      "y": 320.03125,
+      "w": 344,
+      "h": 115.1875
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "344px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "28.0",
+    "distRight": "396.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "hero-btn-primary",
+    "selector": ".hero-actions .btn-primary",
+    "exists": true,
+    "box": {
+      "x": 28,
+      "y": 320.03125,
+      "w": 193,
+      "h": 49.59375
+    },
+    "computed": {
+      "paddingLeft": "30px",
+      "paddingRight": "30px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "193px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "28.0",
+    "distRight": "547.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "hero-btn-secondary",
+    "selector": ".hero-actions .btn-secondary",
+    "exists": true,
+    "box": {
+      "x": 28,
+      "y": 381.625,
+      "w": 180,
+      "h": 53.59375
+    },
+    "computed": {
+      "paddingLeft": "30px",
+      "paddingRight": "30px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "180px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "28.0",
+    "distRight": "560.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "hero-stats",
+    "selector": ".hero-stats",
+    "exists": true,
+    "box": {
+      "x": 28,
+      "y": 475.21875,
+      "w": 344,
+      "h": 81.1875
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "344px",
+      "display": "grid",
+      "position": "static"
+    },
+    "distLeft": "28.0",
+    "distRight": "396.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "hero-content",
+    "selector": ".hero-content",
+    "exists": true,
+    "box": {
+      "x": 28,
+      "y": 48,
+      "w": 344,
+      "h": 508.40625
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "344px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "28.0",
+    "distRight": "396.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "contacto-form",
+    "selector": ".contacto-form",
+    "exists": true,
+    "box": {
+      "x": 398,
+      "y": 7058.34375,
+      "w": 342,
+      "h": 824.640625
+    },
+    "computed": {
+      "paddingLeft": "32px",
+      "paddingRight": "32px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "342px",
+      "display": "grid",
+      "position": "static"
+    },
+    "distLeft": "398.0",
+    "distRight": "28.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "contacto-grid",
+    "selector": ".contacto-grid",
+    "exists": true,
+    "box": {
+      "x": 28,
+      "y": 7058.34375,
+      "w": 712,
+      "h": 824.640625
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "712px",
+      "display": "grid",
+      "position": "static"
+    },
+    "distLeft": "28.0",
+    "distRight": "28.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "btn-full-submit",
+    "selector": ".contacto-form .btn-full, .contacto-form button[type=\"submit\"]",
+    "exists": true,
+    "box": {
+      "x": 431,
+      "y": 7752.8125,
+      "w": 276,
+      "h": 97.171875
+    },
+    "computed": {
+      "paddingLeft": "14px",
+      "paddingRight": "14px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "276px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "431.0",
+    "distRight": "61.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "form-input",
+    "selector": ".contacto-form .form-group input",
+    "exists": true,
+    "box": {
+      "x": 431,
+      "y": 7120.390625,
+      "w": 129,
+      "h": 48
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "129px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "431.0",
+    "distRight": "208.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "form-textarea",
+    "selector": ".contacto-form .form-group textarea",
+    "exists": true,
+    "box": {
+      "x": 431,
+      "y": 7557.046875,
+      "w": 276,
+      "h": 128
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "276px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "431.0",
+    "distRight": "61.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "btn-nav",
+    "selector": ".btn-nav",
+    "exists": true,
+    "box": {
+      "x": 16,
+      "y": -723.237548828125,
+      "w": 152,
+      "h": 53.59375
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "16px",
+      "marginRight": "16px",
+      "width": "152px",
+      "display": "block",
+      "position": "relative"
+    },
+    "distLeft": "16.0",
+    "distRight": "600.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "service-card",
+    "selector": ".service-card:first-child",
+    "exists": true,
+    "box": {
+      "x": 28,
+      "y": 2956.1875,
+      "w": 346,
+      "h": 215.25
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "346px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "28.0",
+    "distRight": "394.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "society-card",
+    "selector": ".society-card:first-child",
+    "exists": true,
+    "box": {
+      "x": 28,
+      "y": 1214.890625,
+      "w": 348,
+      "h": 668.0625
+    },
+    "computed": {
+      "paddingLeft": "20px",
+      "paddingRight": "20px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "348px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "28.0",
+    "distRight": "392.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "feature-card",
+    "selector": ".feature-card:first-child",
+    "exists": true,
+    "box": {
+      "x": 28,
+      "y": 4567.90625,
+      "w": 346,
+      "h": 223
+    },
+    "computed": {
+      "paddingLeft": "20px",
+      "paddingRight": "20px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "346px",
+      "display": "flex",
+      "position": "relative"
+    },
+    "distLeft": "28.0",
+    "distRight": "394.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "whatsapp-float",
+    "selector": ".whatsapp-float",
+    "exists": true,
+    "box": {
+      "x": 684,
+      "y": 940,
+      "w": 60,
+      "h": 60
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "60px",
+      "display": "flex",
+      "position": "fixed"
+    },
+    "distLeft": "684.0",
+    "distRight": "24.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "container",
+    "selector": ".container:first-of-type",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 16,
+      "w": 768,
+      "h": 44
+    },
+    "computed": {
+      "paddingLeft": "28px",
+      "paddingRight": "28px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "768px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "index",
+    "breakpoint": "tablet",
+    "element": "body",
+    "selector": "body",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 0,
+      "w": 768,
+      "h": 8453.484375
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "768px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "tablet",
+    "element": "contacto-form",
+    "selector": ".contacto-form",
+    "exists": true,
+    "box": {
+      "x": 398,
+      "y": 100,
+      "w": 342,
+      "h": 540.515625
+    },
+    "computed": {
+      "paddingLeft": "32px",
+      "paddingRight": "32px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "342px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "398.0",
+    "distRight": "28.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "tablet",
+    "element": "contacto-grid",
+    "selector": ".contacto-grid",
+    "exists": true,
+    "box": {
+      "x": 28,
+      "y": 100,
+      "w": 712,
+      "h": 540.515625
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "712px",
+      "display": "grid",
+      "position": "static"
+    },
+    "distLeft": "28.0",
+    "distRight": "28.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "tablet",
+    "element": "btn-full-submit",
+    "selector": ".contacto-form .btn-full, .contacto-form button[type=\"submit\"]",
+    "exists": true,
+    "box": {
+      "x": 431,
+      "y": 558.515625,
+      "w": 276,
+      "h": 49
+    },
+    "computed": {
+      "paddingLeft": "14px",
+      "paddingRight": "14px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "276px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "431.0",
+    "distRight": "61.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "tablet",
+    "element": "form-input",
+    "selector": ".contacto-form .form-group input",
+    "exists": true,
+    "box": {
+      "x": 431,
+      "y": 238.828125,
+      "w": 129,
+      "h": 48
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "129px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "431.0",
+    "distRight": "208.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "tablet",
+    "element": "form-textarea",
+    "selector": ".contacto-form .form-group textarea",
+    "exists": true,
+    "box": {
+      "x": 431,
+      "y": 418.921875,
+      "w": 276,
+      "h": 120
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "276px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "431.0",
+    "distRight": "61.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "tablet",
+    "element": "btn-nav",
+    "selector": ".btn-nav",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "tablet",
+    "element": "service-card",
+    "selector": ".service-card:first-child",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "tablet",
+    "element": "society-card",
+    "selector": ".society-card:first-child",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "tablet",
+    "element": "feature-card",
+    "selector": ".feature-card:first-child",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "tablet",
+    "element": "whatsapp-float",
+    "selector": ".whatsapp-float",
+    "exists": true,
+    "box": {
+      "x": 684,
+      "y": 940,
+      "w": 60,
+      "h": 60
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "60px",
+      "display": "flex",
+      "position": "fixed"
+    },
+    "distLeft": "684.0",
+    "distRight": "24.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "tablet",
+    "element": "container",
+    "selector": ".container:first-of-type",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 16,
+      "w": 768,
+      "h": 44
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "768px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "tablet",
+    "element": "body",
+    "selector": "body",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 0,
+      "w": 768,
+      "h": 1434.453125
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "768px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "hero-actions",
+    "selector": ".hero-actions",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 246.78125,
+      "w": 440,
+      "h": 115.1875
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "440px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "hero-btn-primary",
+    "selector": ".hero-actions .btn-primary",
+    "exists": true,
+    "box": {
+      "x": 149.5,
+      "y": 246.78125,
+      "w": 181,
+      "h": 49.59375
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "181px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "149.5",
+    "distRight": "149.5",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "hero-btn-secondary",
+    "selector": ".hero-actions .btn-secondary",
+    "exists": true,
+    "box": {
+      "x": 150,
+      "y": 308.375,
+      "w": 180,
+      "h": 53.59375
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "180px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "150.0",
+    "distRight": "150.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "hero-stats",
+    "selector": ".hero-stats",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 401.96875,
+      "w": 440,
+      "h": 54
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "440px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "hero-content",
+    "selector": ".hero-content",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 36,
+      "w": 440,
+      "h": 419.96875
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "440px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "contacto-form",
+    "selector": ".contacto-form",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 11060.296875,
+      "w": 440,
+      "h": 785.875
+    },
+    "computed": {
+      "paddingLeft": "32px",
+      "paddingRight": "32px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "440px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "contacto-grid",
+    "selector": ".contacto-grid",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 10308.90625,
+      "w": 440,
+      "h": 1537.265625
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "440px",
+      "display": "grid",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "btn-full-submit",
+    "selector": ".contacto-form .btn-full, .contacto-form button[type=\"submit\"]",
+    "exists": true,
+    "box": {
+      "x": 53,
+      "y": 11717.171875,
+      "w": 374,
+      "h": 48
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "374px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "53.0",
+    "distRight": "53.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "form-input",
+    "selector": ".contacto-form .form-group input",
+    "exists": true,
+    "box": {
+      "x": 53,
+      "y": 11122.34375,
+      "w": 374,
+      "h": 48
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "374px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "53.0",
+    "distRight": "53.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "form-textarea",
+    "selector": ".contacto-form .form-group textarea",
+    "exists": true,
+    "box": {
+      "x": 53,
+      "y": 11569.578125,
+      "w": 374,
+      "h": 128
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "374px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "53.0",
+    "distRight": "53.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "btn-nav",
+    "selector": ".btn-nav",
+    "exists": true,
+    "box": {
+      "x": 16,
+      "y": -454.4375,
+      "w": 152,
+      "h": 53.59375
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "16px",
+      "marginRight": "16px",
+      "width": "152px",
+      "display": "block",
+      "position": "relative"
+    },
+    "distLeft": "16.0",
+    "distRight": "312.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "service-card",
+    "selector": ".service-card:first-child",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 4194.234375,
+      "w": 440,
+      "h": 190.9375
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "440px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "society-card",
+    "selector": ".society-card:first-child",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 1591.015625,
+      "w": 440,
+      "h": 719.4375
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "440px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "feature-card",
+    "selector": ".feature-card:first-child",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 6713.1875,
+      "w": 440,
+      "h": 198.6875
+    },
+    "computed": {
+      "paddingLeft": "20px",
+      "paddingRight": "20px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "440px",
+      "display": "flex",
+      "position": "relative"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "whatsapp-float",
+    "selector": ".whatsapp-float",
+    "exists": true,
+    "box": {
+      "x": 412,
+      "y": 732,
+      "w": 52,
+      "h": 52
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "52px",
+      "display": "flex",
+      "position": "fixed"
+    },
+    "distLeft": "412.0",
+    "distRight": "16.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "container",
+    "selector": ".container:first-of-type",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 16,
+      "w": 480,
+      "h": 44
+    },
+    "computed": {
+      "paddingLeft": "20px",
+      "paddingRight": "20px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "480px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "body",
+    "selector": "body",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 12654.765625
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "480px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "nav-toggle",
+    "selector": ".nav-toggle",
+    "exists": true,
+    "box": {
+      "x": 268.5,
+      "y": 10,
+      "w": 44,
+      "h": 44
+    }
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-480",
+    "element": "nav-open",
+    "screenshot": "/home/roger/.hermes/profiles/coder/workspace/trio-eletrico/screenshots/audit/mobile-480/index-nav-open.png"
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "contacto-form",
+    "selector": ".contacto-form",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 569.625,
+      "w": 440,
+      "h": 727.21875
+    },
+    "computed": {
+      "paddingLeft": "32px",
+      "paddingRight": "32px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "440px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "contacto-grid",
+    "selector": ".contacto-grid",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 100,
+      "w": 440,
+      "h": 1196.84375
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "440px",
+      "display": "grid",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "btn-full-submit",
+    "selector": ".contacto-form .btn-full, .contacto-form button[type=\"submit\"]",
+    "exists": true,
+    "box": {
+      "x": 53,
+      "y": 1167.84375,
+      "w": 374,
+      "h": 48
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "374px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "53.0",
+    "distRight": "53.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "form-input",
+    "selector": ".contacto-form .form-group input",
+    "exists": true,
+    "box": {
+      "x": 53,
+      "y": 670.0625,
+      "w": 374,
+      "h": 48
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "374px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "53.0",
+    "distRight": "53.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "form-textarea",
+    "selector": ".contacto-form .form-group textarea",
+    "exists": true,
+    "box": {
+      "x": 53,
+      "y": 1028.25,
+      "w": 374,
+      "h": 120
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "374px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "53.0",
+    "distRight": "53.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "btn-nav",
+    "selector": ".btn-nav",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "service-card",
+    "selector": ".service-card:first-child",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "society-card",
+    "selector": ".society-card:first-child",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "feature-card",
+    "selector": ".feature-card:first-child",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "whatsapp-float",
+    "selector": ".whatsapp-float",
+    "exists": true,
+    "box": {
+      "x": 412,
+      "y": 732,
+      "w": 52,
+      "h": 52
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "52px",
+      "display": "flex",
+      "position": "fixed"
+    },
+    "distLeft": "412.0",
+    "distRight": "16.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "container",
+    "selector": ".container:first-of-type",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 16,
+      "w": 480,
+      "h": 44
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "480px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "body",
+    "selector": "body",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 2168.34375
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "480px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "nav-toggle",
+    "selector": ".nav-toggle",
+    "exists": true,
+    "box": {
+      "x": 268.5,
+      "y": 16,
+      "w": 44,
+      "h": 44
+    }
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-480",
+    "element": "nav-open",
+    "screenshot": "/home/roger/.hermes/profiles/coder/workspace/trio-eletrico/screenshots/audit/mobile-480/contacto-nav-open.png"
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "hero-actions",
+    "selector": ".hero-actions",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 296.96875,
+      "w": 335,
+      "h": 115.1875
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "335px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "hero-btn-primary",
+    "selector": ".hero-actions .btn-primary",
+    "exists": true,
+    "box": {
+      "x": 97,
+      "y": 296.96875,
+      "w": 181,
+      "h": 49.59375
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "181px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "97.0",
+    "distRight": "97.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "hero-btn-secondary",
+    "selector": ".hero-actions .btn-secondary",
+    "exists": true,
+    "box": {
+      "x": 97.5,
+      "y": 358.5625,
+      "w": 180,
+      "h": 53.59375
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "180px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "97.5",
+    "distRight": "97.5",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "hero-stats",
+    "selector": ".hero-stats",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 452.15625,
+      "w": 335,
+      "h": 144.78125
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "335px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "hero-content",
+    "selector": ".hero-content",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 36,
+      "w": 335,
+      "h": 560.9375
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "335px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "contacto-form",
+    "selector": ".contacto-form",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 11668.453125,
+      "w": 335,
+      "h": 785.875
+    },
+    "computed": {
+      "paddingLeft": "32px",
+      "paddingRight": "32px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "335px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "contacto-grid",
+    "selector": ".contacto-grid",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 10819.8125,
+      "w": 335,
+      "h": 1634.515625
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "335px",
+      "display": "grid",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "btn-full-submit",
+    "selector": ".contacto-form .btn-full, .contacto-form button[type=\"submit\"]",
+    "exists": true,
+    "box": {
+      "x": 53,
+      "y": 12325.328125,
+      "w": 269,
+      "h": 48
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "269px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "53.0",
+    "distRight": "53.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "form-input",
+    "selector": ".contacto-form .form-group input",
+    "exists": true,
+    "box": {
+      "x": 53,
+      "y": 11730.5,
+      "w": 269,
+      "h": 48
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "269px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "53.0",
+    "distRight": "53.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "form-textarea",
+    "selector": ".contacto-form .form-group textarea",
+    "exists": true,
+    "box": {
+      "x": 53,
+      "y": 12177.734375,
+      "w": 269,
+      "h": 128
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "269px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "53.0",
+    "distRight": "53.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "btn-nav",
+    "selector": ".btn-nav",
+    "exists": true,
+    "box": {
+      "x": 16,
+      "y": -294.8375244140625,
+      "w": 152,
+      "h": 53.59375
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "16px",
+      "marginRight": "16px",
+      "width": "152px",
+      "display": "block",
+      "position": "relative"
+    },
+    "distLeft": "16.0",
+    "distRight": "207.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "service-card",
+    "selector": ".service-card:first-child",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 4258.703125,
+      "w": 335,
+      "h": 239.5625
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "335px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "society-card",
+    "selector": ".society-card:first-child",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 1797.734375,
+      "w": 335,
+      "h": 663.0625
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "335px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "feature-card",
+    "selector": ".feature-card:first-child",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 6890.765625,
+      "w": 335,
+      "h": 223
+    },
+    "computed": {
+      "paddingLeft": "20px",
+      "paddingRight": "20px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "335px",
+      "display": "flex",
+      "position": "relative"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "whatsapp-float",
+    "selector": ".whatsapp-float",
+    "exists": true,
+    "box": {
+      "x": 307,
+      "y": 599,
+      "w": 52,
+      "h": 52
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "52px",
+      "display": "flex",
+      "position": "fixed"
+    },
+    "distLeft": "307.0",
+    "distRight": "16.0",
+    "issues": []
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "container",
+    "selector": ".container:first-of-type",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 16,
+      "w": 375,
+      "h": 44
+    },
+    "computed": {
+      "paddingLeft": "20px",
+      "paddingRight": "20px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "375px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "body",
+    "selector": "body",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 0,
+      "w": 375,
+      "h": 13262.921875
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "375px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "nav-toggle",
+    "selector": ".nav-toggle",
+    "exists": true,
+    "box": {
+      "x": 216,
+      "y": 10,
+      "w": 44,
+      "h": 44
+    }
+  },
+  {
+    "page": "index",
+    "breakpoint": "mobile-375",
+    "element": "nav-open",
+    "screenshot": "/home/roger/.hermes/profiles/coder/workspace/trio-eletrico/screenshots/audit/mobile-375/index-nav-open.png"
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "contacto-form",
+    "selector": ".contacto-form",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 644.46875,
+      "w": 335,
+      "h": 783.609375
+    },
+    "computed": {
+      "paddingLeft": "32px",
+      "paddingRight": "32px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "335px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "contacto-grid",
+    "selector": ".contacto-grid",
+    "exists": true,
+    "box": {
+      "x": 20,
+      "y": 100,
+      "w": 335,
+      "h": 1328.078125
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "335px",
+      "display": "grid",
+      "position": "static"
+    },
+    "distLeft": "20.0",
+    "distRight": "20.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "btn-full-submit",
+    "selector": ".contacto-form .btn-full, .contacto-form button[type=\"submit\"]",
+    "exists": true,
+    "box": {
+      "x": 53,
+      "y": 1281.078125,
+      "w": 269,
+      "h": 66
+    },
+    "computed": {
+      "paddingLeft": "24px",
+      "paddingRight": "24px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "269px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "53.0",
+    "distRight": "53.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "form-input",
+    "selector": ".contacto-form .form-group input",
+    "exists": true,
+    "box": {
+      "x": 53,
+      "y": 783.296875,
+      "w": 269,
+      "h": 48
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "269px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "53.0",
+    "distRight": "53.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "form-textarea",
+    "selector": ".contacto-form .form-group textarea",
+    "exists": true,
+    "box": {
+      "x": 53,
+      "y": 1141.484375,
+      "w": 269,
+      "h": 120
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "269px",
+      "display": "inline-block",
+      "position": "static"
+    },
+    "distLeft": "53.0",
+    "distRight": "53.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "btn-nav",
+    "selector": ".btn-nav",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "service-card",
+    "selector": ".service-card:first-child",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "society-card",
+    "selector": ".society-card:first-child",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "feature-card",
+    "selector": ".feature-card:first-child",
+    "exists": false
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "whatsapp-float",
+    "selector": ".whatsapp-float",
+    "exists": true,
+    "box": {
+      "x": 307,
+      "y": 599,
+      "w": 52,
+      "h": 52
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "52px",
+      "display": "flex",
+      "position": "fixed"
+    },
+    "distLeft": "307.0",
+    "distRight": "16.0",
+    "issues": []
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "container",
+    "selector": ".container:first-of-type",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 16,
+      "w": 375,
+      "h": 44
+    },
+    "computed": {
+      "paddingLeft": "16px",
+      "paddingRight": "16px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "375px",
+      "display": "flex",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "body",
+    "selector": "body",
+    "exists": true,
+    "box": {
+      "x": 0,
+      "y": 0,
+      "w": 375,
+      "h": 2299.578125
+    },
+    "computed": {
+      "paddingLeft": "0px",
+      "paddingRight": "0px",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "width": "375px",
+      "display": "block",
+      "position": "static"
+    },
+    "distLeft": "0.0",
+    "distRight": "0.0",
+    "issues": [
+      "LEFT edge: 0.0px from viewport",
+      "RIGHT edge: 0.0px from viewport"
+    ]
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "nav-toggle",
+    "selector": ".nav-toggle",
+    "exists": true,
+    "box": {
+      "x": 216,
+      "y": 16,
+      "w": 44,
+      "h": 44
+    }
+  },
+  {
+    "page": "contacto",
+    "breakpoint": "mobile-375",
+    "element": "nav-open",
+    "screenshot": "/home/roger/.hermes/profiles/coder/workspace/trio-eletrico/screenshots/audit/mobile-375/contacto-nav-open.png"
+  }
+]

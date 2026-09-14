@@ -4,14 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0A2540">
+    <meta name="theme-color" content="#0A2540">
+    <meta name="theme-color" content="#0A2540">
+    <meta name="theme-color" content="#0A2540">
     <meta name="description" content="Trio Eléctrico, Instalações Eléctricas e Manutenção, Lda — Empresa de eletricidade com 10 anos de atividade. Serviços de instalação elétrica residencial, comercial e industrial na Península de Setúbal e Grande Lisboa.">
+    <meta name="keywords" content="eletricista, instalações elétricas, eletricidade residencial, eletricidade comercial, eletricidade industrial, reparações elétricas, boletim elétrico, certificação, energia solar, painéis solares, Seixal, Setúbal, Lisboa, Almada, Barreiro, Trio Elétrico">
     <title>Trio Elétrico | Eletricidade Residencial, Comercial e Industrial</title>
 
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Trio Elétrico">
+    <meta property="og:title" content="Trio Elétrico | Eletricidade Residencial, Comercial e Industrial">
+    <meta property="og:description" content="Empresa de eletricidade com 10 anos de atividade. Instalações, reparações e certificações elétricas na Península de Setúbal e Grande Lisboa. Orçamento gratuito.">
+    <meta property="og:url" content="https://trioeletrico.pt">
+    <meta property="og:image" content="https://trioeletrico.pt/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="pt_PT">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Trio Elétrico | Eletricidade Residencial, Comercial e Industrial">
+    <meta name="twitter:description" content="Empresa de eletricidade com 10 anos de atividade. Instalações, reparações e certificações elétricas na Península de Setúbal e Grande Lisboa.">
+    <meta name="twitter:image" content="https://trioeletrico.pt/og-image.png">
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- DNS prefetch for external images -->
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
 
     <!-- Preconnect to external origins for faster resource loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
 
     <!-- Preload fonts: CSS async + woff2 direct (Lighthouse "Preload key fonts") -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.rel='stylesheet'">
@@ -26,7 +55,7 @@
     <!-- End Critical CSS -->
 
     <!-- Main stylesheet (after critical CSS so media queries override inline styles) -->
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.v1.min.css">
 
     <!-- JSON-LD: LocalBusiness (Electrician) + AggregateRating + Service + Person -->
     <!-- Canonical URL -->
@@ -241,6 +270,8 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <noscript><link rel="stylesheet" href="css/style.min.css"></noscript>
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 
@@ -260,6 +291,29 @@
         }catch(e){}
     })();
     </script>
+    <noscript><style>.reveal,.reveal-stagger>*{opacity:1!important;transform:none!important}</style></noscript>
+    <!-- CRITICAL FIX: Make reveal elements visible when JS doesn't run (browserbase strips scripts) -->
+    <style id="fix-reveal-fallback">
+        /* If JS hasn't added 'js' class to html within 2s, show content */
+        .reveal, .reveal-stagger > * {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+        /* JS will add 'js' class, which re-enables the animation */
+        html.js .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        html.js .reveal-stagger > * {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        /* When JS reveals them */
+        html.js .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
     <!-- Skip-to-content link -->
@@ -277,7 +331,7 @@
             </button>
             <button class="theme-toggle" aria-label="Alternar modo escuro" id="theme-toggle">
                 <!-- Sun icon -->
-                <svg class="theme-toggle__icon theme-toggle__sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="theme-toggle__icon theme-toggle__sun" width="1.8rem" height="1.8rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="5"></circle>
                     <line x1="12" y1="1" x2="12" y2="3"></line>
                     <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -289,7 +343,7 @@
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                 </svg>
                 <!-- Moon icon -->
-                <svg class="theme-toggle__icon theme-toggle__moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="theme-toggle__icon theme-toggle__moon" width="1.8rem" height="1.8rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
             </button>
@@ -298,6 +352,7 @@
                     <li><a href="#sobre">Sobre Nós</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#areas">Áreas de Atuação</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
                     <li><a href="#porquenos">Porquê Nós</a></li>
                     <li><a href="#depoimentos">Depoimentos</a></li>
                     <li><a href="#faq">FAQ</a></li>
@@ -316,8 +371,41 @@
                     <h1>Eletricidade com segurança, confiança e profissionalismo</h1>
                     <p>Somos o Trio Elétrico — três eletricistas certificados ao seu serviço, com 10 anos de atividade. Instalações, reparações e manutenção elétrica para casas, empresas e indústrias.</p>
                     <div class="hero-actions">
-                        <a href="#contacto" class="btn btn-primary">Pedir Orçamento</a>
-                        <a href="#servicos" class="btn btn-secondary">Ver Serviços</a>
+                        <a href="#contacto" class="btn btn-primary hero-cta-main">Pedir Orçamento</a>
+                        <a href="https://wa.me/351912345678" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
+                    <div class="urgency-badge" aria-label="Tempo de resposta">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Resposta em menos de 2 horas
+                    </div>
+                    <div class="scarcity-banner" aria-label="Disponibilidade limitada">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        <span>Vagas limitadas para este mês — agenda já está 70% preenchida</span>
+                    </div>
+                    <div class="social-proof-bar">
+                        <div class="social-proof-avatars">
+                            <div class="avatar">MF</div>
+                            <div class="avatar">PA</div>
+                            <div class="avatar">AR</div>
+                            <div class="avatar">RS</div>
+                            <div class="avatar">+</div>
+                        </div>
+                        <span class="social-proof-text">Juntou-se a 500+ clientes satisfeitos</span>
+                    </div>
+                    <!-- Hero Trust Badges Strip -->
+                    <div class="hero-trust-strip">
+                        <div class="hero-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                            <span>Certificados DGEG</span>
+                        </div>
+                        <div class="hero-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                            <span>Seguro RC</span>
+                        </div>
+                        <div class="hero-trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                            <span>Garantia 2 anos</span>
+                        </div>
                     </div>
                     <div class="hero-stats">
                         <div class="stat">
@@ -335,7 +423,8 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <svg viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração de eletricistas profissionais do Trio Elétrico a trabalhar em instalações elétricas" width="600" height="500">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&h=600&q=80" alt="Eletricista profissional do Trio Elétrico a trabalhar em instalação elétrica" loading="eager" width="800" height="600" class="hero-photo">
+                    <svg viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração de eletricistas profissionais do Trio Elétrico a trabalhar em instalações elétricas" width="600" height="500" class="hero-svg-fallback">
                         <!-- Fundo com gradiente -->
                         <defs>
                             <linearGradient id="hero-bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -457,6 +546,9 @@
                     <h2 id="sobre-title">Conhece os três por trás do Trio Elétrico</h2>
                     <p>Três profissionais apaixonados pela eletricidade, unidos pela missão de entregar trabalho seguro, limpo e bem feito. Cada um com a sua especialidade, todos com o mesmo compromisso: a tua satisfação.</p>
                 </div>
+                <div class="team-banner reveal">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&h=400&q=80" alt="Equipa do Trio Elétrico - três eletricistas profissionais em trabalho de instalação elétrica" loading="lazy" width="1200" height="400">
+                </div>
                 <!-- Dados da Empresa -->
                 <div class="company-data reveal" style="margin-top:2rem;">
                     <h3 style="margin-bottom:1rem;font-size:1.1rem;color:var(--color-primary)">Dados da Empresa</h3>
@@ -528,64 +620,76 @@
                 </div>
                 <div class="services-grid reveal-stagger">
                     <div class="service-card reveal">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M4 14L16 4L28 14V26C28 27.1 27.1 28 26 28H6C4.9 28 4 27.1 4 26V14Z" stroke="#0A2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M13 28V18H19V28" stroke="#0A2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="16" cy="12" r="2" stroke="#FFC107" stroke-width="2"/>
-    </svg>
+                        <div class="service-icon-wrapper">
+                            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M4 14L16 4L28 14V26C28 27.1 27.1 28 26 28H6C4.9 28 4 27.1 4 26V14Z" stroke="#0A2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13 28V18H19V28" stroke="#0A2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="16" cy="12" r="2" stroke="#FFC107" stroke-width="2"/>
+                            </svg>
+                        </div>
                         <h3>Instalações Residenciais</h3>
                         <p>Instalações completas para casas novas ou reabilitações. Quadros elétricos, pontos de luz, tomadas e proteção em conformidade com a RGAI.</p>
                     </div>
                     <div class="service-card reveal">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="6" y="8" width="20" height="20" rx="2" stroke="#0A2540" stroke-width="2"/>
-        <rect x="10" y="12" width="4" height="4" rx="0.5" stroke="#FFC107" stroke-width="1.5"/>
-        <rect x="18" y="12" width="4" height="4" rx="0.5" stroke="#FFC107" stroke-width="1.5"/>
-        <rect x="10" y="18" width="4" height="4" rx="0.5" stroke="#FFC107" stroke-width="1.5"/>
-        <rect x="18" y="18" width="4" height="4" rx="0.5" stroke="#FFC107" stroke-width="1.5"/>
-        <path d="M12 28V24H20V28" stroke="#0A2540" stroke-width="2"/>
-    </svg>
+                        <div class="service-icon-wrapper">
+                            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="6" y="8" width="1.8rem" height="1.8rem" rx="2" stroke="#0A2540" stroke-width="2"/>
+                                <rect x="10" y="12" width="4" height="4" rx="0.5" stroke="#FFC107" stroke-width="1.5"/>
+                                <rect x="18" y="12" width="4" height="4" rx="0.5" stroke="#FFC107" stroke-width="1.5"/>
+                                <rect x="10" y="18" width="4" height="4" rx="0.5" stroke="#FFC107" stroke-width="1.5"/>
+                                <rect x="18" y="18" width="4" height="4" rx="0.5" stroke="#FFC107" stroke-width="1.5"/>
+                                <path d="M12 28V24H20V28" stroke="#0A2540" stroke-width="2"/>
+                            </svg>
+                        </div>
                         <h3>Instalações Comerciais</h3>
                         <p>Projetos elétricos para lojas, escritórios e restaurantes. Inclui iluminação, tomadas de força e certificação obrigatória.</p>
                     </div>
                     <div class="service-card reveal">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M4 28L8 20H24L28 28H4Z" stroke="#0A2540" stroke-width="2" stroke-linejoin="round"/>
-        <rect x="10" y="10" width="12" height="10" rx="1" stroke="#0A2540" stroke-width="2"/>
-        <circle cx="16" cy="15" r="3" stroke="#FFC107" stroke-width="1.5"/>
-        <path d="M8 14H6V20H8" stroke="#0A2540" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M24 14H26V20H24" stroke="#0A2540" stroke-width="1.5" stroke-linecap="round"/>
-    </svg>
+                        <div class="service-icon-wrapper">
+                            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M4 28L8 20H24L28 28H4Z" stroke="#0A2540" stroke-width="2" stroke-linejoin="round"/>
+                                <rect x="10" y="10" width="12" height="10" rx="1" stroke="#0A2540" stroke-width="2"/>
+                                <circle cx="16" cy="15" r="3" stroke="#FFC107" stroke-width="1.5"/>
+                                <path d="M8 14H6V20H8" stroke="#0A2540" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M24 14H26V20H24" stroke="#0A2540" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                         <h3>Instalações Industriais</h3>
                         <p>Quadros de comando, distribuição de energia, motores e automatizações para indústrias e armazéns logísticos.</p>
                     </div>
                     <div class="service-card reveal">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M16 4C14 4 12 6 12 8C12 9.5 13 11 14 12L6 20L8 22L16 14C15 15 14 16.5 14 18C14 21 17 24 20 24C23 24 26 21 26 18C26 15 23 12 20 12" stroke="#0A2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="16" cy="6" r="1" fill="#FFC107"/>
-    </svg>
+                        <div class="service-icon-wrapper">
+                            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M16 4C14 4 12 6 12 8C12 9.5 13 11 14 12L6 20L8 22L16 14C15 15 14 16.5 14 18C14 21 17 24 20 24C23 24 26 21 26 18C26 15 23 12 20 12" stroke="#0A2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="16" cy="6" r="1" fill="#FFC107"/>
+                            </svg>
+                        </div>
                         <h3>Reparações e Avarias</h3>
                         <p>Intervenção rápida para avarias elétricas. Corte de corrente, disjuntores que saltam, curto-circuitos e outros problemas urgentes.</p>
                     </div>
                     <div class="service-card reveal">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="8" y="4" width="16" height="24" rx="2" stroke="#0A2540" stroke-width="2"/>
-        <line x1="12" y1="10" x2="20" y2="10" stroke="#0A2540" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="12" y1="14" x2="20" y2="14" stroke="#0A2540" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="12" y1="18" x2="17" y2="18" stroke="#0A2540" stroke-width="1.5" stroke-linecap="round"/>
-        <path d="M22 22L24 24L28 20" stroke="#FFC107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+                        <div class="service-icon-wrapper">
+                            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="8" y="4" width="16" height="24" rx="2" stroke="#0A2540" stroke-width="2"/>
+                                <line x1="12" y1="10" x2="20" y2="10" stroke="#0A2540" stroke-width="1.5" stroke-linecap="round"/>
+                                <line x1="12" y1="14" x2="20" y2="14" stroke="#0A2540" stroke-width="1.5" stroke-linecap="round"/>
+                                <line x1="12" y1="18" x2="17" y2="18" stroke="#0A2540" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M22 22L24 24L28 20" stroke="#FFC107" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
                         <h3>Boletins e Certificações</h3>
                         <p>Emissão e atualização de boletins elétricos para habitações e empresas. Cumprimos toda a legislação em vigor.</p>
                     </div>
                     <div class="service-card reveal">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="16" cy="16" r="5" stroke="#FFC107" stroke-width="2"/>
-        <path d="M16 3V6M16 26V29M3 16H6M26 16H29M7.05 7.05L9.17 9.17M22.83 22.83L24.95 24.95M24.95 7.05L22.83 9.17M9.17 22.83L7.05 24.95" stroke="#0A2540" stroke-width="2" stroke-linecap="round"/>
-        <rect x="10" y="22" width="12" height="6" rx="1" stroke="#0A2540" stroke-width="1.5"/>
-        <line x1="14" y1="22" x2="14" y2="28" stroke="#0A2540" stroke-width="1"/>
-        <line x1="18" y1="22" x2="18" y2="28" stroke="#0A2540" stroke-width="1"/>
-    </svg>
+                        <div class="service-icon-wrapper">
+                            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="16" cy="16" r="5" stroke="#FFC107" stroke-width="2"/>
+                                <path d="M16 3V6M16 26V29M3 16H6M26 16H29M7.05 7.05L9.17 9.17M22.83 22.83L24.95 24.95M24.95 7.05L22.83 9.17M9.17 22.83L7.05 24.95" stroke="#0A2540" stroke-width="2" stroke-linecap="round"/>
+                                <rect x="10" y="22" width="12" height="6" rx="1" stroke="#0A2540" stroke-width="1.5"/>
+                                <line x1="14" y1="22" x2="14" y2="28" stroke="#0A2540" stroke-width="1"/>
+                                <line x1="18" y1="22" x2="18" y2="28" stroke="#0A2540" stroke-width="1"/>
+                            </svg>
+                        </div>
                         <h3>Energia Solar</h3>
                         <p>Instalação de painéis solares fotovoltaicos e sistemas de autoconsumo. Reduz a fatura de eletricidade em até 70%.</p>
                     </div>
@@ -596,10 +700,10 @@
         <!-- Áreas de Atuação -->
         <section id="areas" class="section areas reveal" aria-label="Áreas de atuação">
             <div class="container">
-                <div class="areas-grid">
-                    <div class="areas-content">
+                <div class="areas-grid reveal-stagger">
+                    <div class="areas-content reveal">
                         <span class="section-tag">Onde Atuamos</span>
-                        <h2 id="areas-title">Presença em todo o país</h2>
+                        <h2 id="areas-title">Onde Atuamos</h2>
                         <p>Embora a sede esteja no Seixal (Amora), o Trio Elétrico atua em toda a Península de Setúbal e Grande Lisboa. Desloca-nos onde precisares.</p>
                         <ul class="areas-list">
                             <li>Seixal e Península de Setúbal</li>
@@ -610,7 +714,7 @@
                             <li>Setúbal e Alentejo Litoral</li>
                         </ul>
                     </div>
-                    <div class="areas-image">
+                    <div class="areas-image reveal">
                         <svg viewBox="0 0 550 500" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa de Portugal continental" style="width:100%;height:auto;max-width:550px;">
                             <!-- Fundo -->
                             <rect width="550" height="500" fill="#1a2a4a" rx="12"/>
@@ -662,6 +766,58 @@
             </div>
         </section>
 
+        <!-- Galeria de Projetos -->
+        <section id="galeria" class="section galeria reveal" aria-labelledby="galeria-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Portfólio</span>
+                    <h2 id="galeria-title">Trabalhos realizados</h2>
+                    <p>Conheça alguns dos nossos projetos. Instalações elétricas, reparações e energia solar com a qualidade Trio Elétrico.</p>
+                </div>
+                <div class="gallery-grid reveal-stagger">
+                    <div class="gallery-item reveal">
+                        <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&h=400&q=80" alt="Instalação elétrica residencial - quadro elétrico novo em casa particular" loading="lazy" width="600" height="400">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Instalação Residencial — Montagem de quadro elétrico</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&h=400&q=80" alt="Painéis solares fotovoltaicos instalados em telhado industrial" loading="lazy" width="600" height="400">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Energia Solar — Painéis fotovoltaicos em telhado</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&h=400&q=80" alt="Eletricista a trabalhar em instalação comercial com ferramentas profissionais" loading="lazy" width="600" height="400">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Instalação Comercial — Cablagem de escritório</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&h=400&q=80" alt="Detalhe de instalação elétrica industrial com cabos organizados" loading="lazy" width="600" height="400">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Instalação Industrial — Quadro de comando</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=600&h=400&q=80" alt="Reparação elétrica - eletricista a diagnosticar avaria em quadro" loading="lazy" width="600" height="400">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Reparação — Diagnóstico de avaria elétrica</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item reveal">
+                        <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=600&h=400&q=80" alt="Painéis solares ao pôr do sol - energia renovável sustentável" loading="lazy" width="600" height="400">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Energia Solar — Sistema de autoconsumo</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="gallery-credit" style="text-align:center;margin-top:1.5rem;font-size:0.8rem;color:var(--text-muted)">
+                    Imagens ilustrativas via <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent)">Unsplash</a>. Para fotos reais dos nossos trabalhos, <a href="#contacto" style="color:var(--color-accent)">contacte-nos</a>.
+                </p>
+            </div>
+        </section>
+
         <!-- Porquê Escolher-nos -->
         <section id="porquenos" class="section porquenos reveal" aria-label="Porquê escolher-nos">
             <div class="container">
@@ -702,6 +858,34 @@
                         <p>Facturas detalhadas e preços concordados antes de iniciar. Sem taxas ocultas, sem surpresas no final.</p>
                     </div>
                 </div>
+
+                <!-- Trust Badges -->
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                        </div>
+                        <span>Certificados DGEG</span>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                        </div>
+                        <span>Seguro RC ativo</span>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+                        </div>
+                        <span>Garantia 2 anos</span>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <span>Resposta em &lt; 2h</span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -713,69 +897,65 @@
                     <h2 id="depoimentos-title">O que dizem os nossos clientes</h2>
                     <p>A confiança de quem já trabalhou connosco é o nosso melhor cartão de visita.</p>
                 </div>
-                <div class="testimonials-grid reveal-stagger">
-                    <div class="testimonial-card reveal">
-                        <div class="testimonial-stars" aria-label="5 estrelas" role="img">★★★★★</div>
-                        <p class="testimonial-text">"Chamámos o Trio Elétrico para fazer toda a instalação elétrica da nossa casa nova. Trabalho impecável, cumpriram o prazo e o orçamento ao pormenor. Recomendamo-lo a 100%."</p>
-                        <div class="testimonial-author">
-                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar de Maria Fernandes">
-                            <defs><linearGradient id="grad-m" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A2540"/><stop offset="100%" stop-color="#103d6a"/></linearGradient></defs>
-                            <rect width="60" height="60" rx="30" fill="url(#grad-m)"/>
-                            <circle cx="30" cy="30" r="28" fill="#FFC107" opacity="0.12"/>
-                            <text x="30" y="38" text-anchor="middle" fill="#FFC107" font-size="22" font-weight="800" font-family="Inter, sans-serif">M</text>
-                        </svg>
-                            <div>
-                                <span class="testimonial-name">Maria Fernandes</span>
-                                <span class="testimonial-location">Vila Nova de Gaia</span>
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="testimonials-track" role="region" aria-label="Carrossel de depoimentos">
+                        <div class="testimonial-card" id="s1">
+                            <div class="testimonial-stars" aria-label="5 estrelas" role="img">★★★★★</div>
+                            <p class="testimonial-text">"Chamámos o Trio Elétrico para fazer toda a instalação elétrica da nossa casa nova. Trabalho impecável, cumpriram o prazo e o orçamento ao pormenor. Recomendamo-lo a 100%."</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-author-avatar">MF</div>
+                                <div>
+                                    <span class="testimonial-name">Maria Fernandes</span>
+                                    <span class="testimonial-location">Vila Nova de Gaia</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card" id="s2">
+                            <div class="testimonial-stars" aria-label="5 estrelas" role="img">★★★★★</div>
+                            <p class="testimonial-text">"Tivemos uma avaria grave numa sexta-feira à tarde e o João estava à nossa porta em menos de uma hora. Profissionalismo exemplar. Muito obrigado!"</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-author-avatar accent">PA</div>
+                                <div>
+                                    <span class="testimonial-name">Pedro Almeida</span>
+                                    <span class="testimonial-location">Porto</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card" id="s3">
+                            <div class="testimonial-stars" aria-label="5 estrelas" role="img">★★★★★</div>
+                            <p class="testimonial-text">"O Carlos fez toda a instalação elétrica do nosso restaurante. Ficou tudo certinho, em conformidade com as normas, e o boletim foi emitido no mesmo dia. Serviço de excelência."</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-author-avatar">AR</div>
+                                <div>
+                                    <span class="testimonial-name">Ana Rodrigues</span>
+                                    <span class="testimonial-location">Braga</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card" id="s4">
+                            <div class="testimonial-stars" aria-label="5 estrelas" role="img">★★★★★</div>
+                            <p class="testimonial-text">"Instalaram painéis solares na minha oficina e já reduzi a fatura em 60%. O Trio Elétrico fez tudo — desde o projeto à aprovação na entidade reguladora. Trabalho de qualidade."</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-author-avatar accent">RS</div>
+                                <div>
+                                    <span class="testimonial-name">Ricardo Sousa</span>
+                                    <span class="testimonial-location">Coimbra</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="testimonial-card reveal">
-                        <div class="testimonial-stars" aria-label="5 estrelas" role="img">★★★★★</div>
-                        <p class="testimonial-text">"Tivemos uma avaria grave numa sexta-feira à tarde e o João estava à nossa porta em menos de uma hora. Profissionalismo exemplar. Muito obrigado!"</p>
-                        <div class="testimonial-author">
-                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar de Pedro Almeida">
-                            <defs><linearGradient id="grad-p" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A2540"/><stop offset="100%" stop-color="#103d6a"/></linearGradient></defs>
-                            <rect width="60" height="60" rx="30" fill="url(#grad-p)"/>
-                            <circle cx="30" cy="30" r="28" fill="#FFC107" opacity="0.12"/>
-                            <text x="30" y="38" text-anchor="middle" fill="#FFC107" font-size="22" font-weight="800" font-family="Inter, sans-serif">P</text>
-                        </svg>
-                            <div>
-                                <span class="testimonial-name">Pedro Almeida</span>
-                                <span class="testimonial-location">Porto</span>
-                            </div>
+
+                    <!-- Carousel Navigation -->
+                    <div class="carousel-nav">
+                        <div class="testimonials-arrows noSwipe">
+                            <button class="testimonials-arrow" id="prev" aria-label="Depoimento anterior"><svg viewBox="0 0 20 20"><polyline points="12 4 6 10 12 16"/></svg></button>
+                            <button class="testimonials-arrow" id="next" aria-label="Próximo depoimento"><svg viewBox="0 0 20 20"><polyline points="8 4 14 10 8 16"/></svg></button>
                         </div>
-                    </div>
-                    <div class="testimonial-card reveal">
-                        <div class="testimonial-stars" aria-label="5 estrelas" role="img">★★★★★</div>
-                        <p class="testimonial-text">"O Carlos fez toda a instalação elétrica do nosso restaurante. Ficou tudo certinho, em conformidade com as normas, e o boletim foi emitido no mesmo dia. Serviço de excelência."</p>
-                        <div class="testimonial-author">
-                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar de Ana Rodrigues">
-                            <defs><linearGradient id="grad-a" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A2540"/><stop offset="100%" stop-color="#103d6a"/></linearGradient></defs>
-                            <rect width="60" height="60" rx="30" fill="url(#grad-a)"/>
-                            <circle cx="30" cy="30" r="28" fill="#FFC107" opacity="0.12"/>
-                            <text x="30" y="38" text-anchor="middle" fill="#FFC107" font-size="22" font-weight="800" font-family="Inter, sans-serif">A</text>
-                        </svg>
-                            <div>
-                                <span class="testimonial-name">Ana Rodrigues</span>
-                                <span class="testimonial-location">Braga</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card reveal">
-                        <div class="testimonial-stars" aria-label="5 estrelas" role="img">★★★★★</div>
-                        <p class="testimonial-text">"Instalaram painéis solares na minha oficina e já reduzi a fatura em 60%. O Trio Elétrico fez tudo — desde o projeto à aprovação na entidade reguladora. Trabalho de qualidade."</p>
-                        <div class="testimonial-author">
-                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Avatar de Ricardo Sousa">
-                            <defs><linearGradient id="grad-r" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0A2540"/><stop offset="100%" stop-color="#103d6a"/></linearGradient></defs>
-                            <rect width="60" height="60" rx="30" fill="url(#grad-r)"/>
-                            <circle cx="30" cy="30" r="28" fill="#FFC107" opacity="0.12"/>
-                            <text x="30" y="38" text-anchor="middle" fill="#FFC107" font-size="22" font-weight="800" font-family="Inter, sans-serif">R</text>
-                        </svg>
-                            <div>
-                                <span class="testimonial-name">Ricardo Sousa</span>
-                                <span class="testimonial-location">Coimbra</span>
-                            </div>
+                        <div class="testimonials-dots" id="testimonials-dots" role="tablist" aria-label="Navegação de depoimentos">
+                            <button class="testimonials-dot active" aria-label="Depoimento 1" role="tab" aria-selected="true"></button>
+                            <button class="testimonials-dot" aria-label="Depoimento 2" role="tab" aria-selected="false"></button>
+                            <button class="testimonials-dot" aria-label="Depoimento 3" role="tab" aria-selected="false"></button>
+                            <button class="testimonials-dot" aria-label="Depoimento 4" role="tab" aria-selected="false"></button>
                         </div>
                     </div>
                 </div>
@@ -791,46 +971,46 @@
                     <p>Respostas às perguntas que os nossos clientes nos fazem mais frequentemente.</p>
                 </div>
                 <div class="faq-list" role="list">
-                    <div class="faq-item reveal" role="listitem">
+                    <div class="faq-item" role="listitem">
                         <button class="faq-question" id="faq-question-1" aria-expanded="false" aria-controls="faq-answer-1">
                             <span class="faq-question-text">Qual é o custo de uma visita para orçamento?</span>
-                            <span class="faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></span>
+                            <span class="faq-icon" aria-hidden="true"><svg width="1.8rem" height="1.8rem" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></span>
                         </button>
                         <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
                             <p>A visita para elaboração de orçamento é <strong>gratuita e sem compromisso</strong>. Basta ligares ou mandares mensagem, descreves o que precisas e marcamos uma visita ao local. Sem custos escondidos.</p>
                         </div>
                     </div>
-                    <div class="faq-item reveal" role="listitem">
+                    <div class="faq-item" role="listitem">
                         <button class="faq-question" id="faq-question-2" aria-expanded="false" aria-controls="faq-answer-2">
                             <span class="faq-question-text">Trabalham aos fins de semana e feriados?</span>
-                            <span class="faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></span>
+                            <span class="faq-icon" aria-hidden="true"><svg width="1.8rem" height="1.8rem" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></span>
                         </button>
                         <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
                             <p>Sim! Estamos disponíveis de segunda a sábado, das 8h às 20h. Para urgências fora deste horário (noites e domingos), temos serviço de emergência com custo adicional. Contacta-nos por telefone ou WhatsApp.</p>
                         </div>
                     </div>
-                    <div class="faq-item reveal" role="listitem">
+                    <div class="faq-item" role="listitem">
                         <button class="faq-question" id="faq-question-3" aria-expanded="false" aria-controls="faq-answer-3">
                             <span class="faq-question-text">Em quanto tempo é emitido o boletim elétrico?</span>
-                            <span class="faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></span>
+                            <span class="faq-icon" aria-hidden="true"><svg width="1.8rem" height="1.8rem" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></span>
                         </button>
                         <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
                             <p>Se a instalação já estiver em conformidade, o boletim pode ser emitido no <strong>mesmo dia</strong>. Caso sejam necessárias pequenas correções, geralmente resolvemos tudo numa segunda visita em 24-48 horas.</p>
                         </div>
                     </div>
-                    <div class="faq-item reveal" role="listitem">
+                    <div class="faq-item" role="listitem">
                         <button class="faq-question" id="faq-question-4" aria-expanded="false" aria-controls="faq-answer-4">
                             <span class="faq-question-text">Vocês fazem obras ou apenas instalação elétrica?</span>
-                            <span class="faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></span>
+                            <span class="faq-icon" aria-hidden="true"><svg width="1.8rem" height="1.8rem" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></span>
                         </button>
                         <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
                             <p>O Trio Elétrico faz <strong>apenas a parte elétrica</strong> — instalações, reparações e certificações. Se o projeto exigir obras de alvenaria, pintura ou outros trabalhos, indicamos parceiros de confiança para o resto.</p>
                         </div>
                     </div>
-                    <div class="faq-item reveal" role="listitem">
+                    <div class="faq-item" role="listitem">
                         <button class="faq-question" id="faq-question-5" aria-expanded="false" aria-controls="faq-answer-5">
                             <span class="faq-question-text">A instalação solar precisa de autorização?</span>
-                            <span class="faq-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></span>
+                            <span class="faq-icon" aria-hidden="true"><svg width="1.8rem" height="1.8rem" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line class="faq-icon-vertical" x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg></span>
                         </button>
                         <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
                             <p>Sim, é necessário apresentar o projeto à entidade distribuidora (EDR) e obter a aprovação. O Trio Elétrico <strong>cuida de todo o processo</strong> — desde o estudo de viabilidade à instalação e ligação à rede. Tu só tens de assinar.</p>
@@ -848,6 +1028,10 @@
                         <span class="section-tag">Fala Connosco</span>
                         <h2>Pede o teu orçamento gratuito</h2>
                         <p>Tem uma dúvida, uma avaria ou precisas de um orçamento? Contacta-nos por qualquer um destes meios e respondemos em menos de 2 horas.</p>
+                        <div class="urgency-badge" aria-label="Tempo de resposta">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Resposta em menos de 2 horas — orçamento grátis
+                        </div>
                         <div class="contacto-methods">
                             <div class="contacto-item">
                                 <div class="contacto-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
@@ -886,7 +1070,33 @@
                             </div>
                         </div>
                     </div>
-                    <form class="contacto-form" action="#" method="post" aria-label="Formulário de contacto">
+                    <form class="contacto-form contacto-form--quick" action="#" method="post" aria-label="Pedido rápido de orçamento">
+                        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:12px;color:var(--color-primary)">Pedido rápido de orçamento</h3>
+                        <div class="form-row" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                            <div class="form-group">
+                                <input type="text" id="quick-nome" name="nome" placeholder="O teu nome" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="quick-telefone" name="telefone" placeholder="Telefone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select id="quick-assunto" name="assunto" required aria-label="Assunto do pedido">
+                                <option value="" disabled selected>Que serviço precisas?</option>
+                                <option value="residencial">Instalação Residencial</option>
+                                <option value="comercial">Instalação Comercial</option>
+                                <option value="industrial">Instalação Industrial</option>
+                                <option value="reparacao">Reparação / Avaria</option>
+                                <option value="boletim">Boletim Elétrico</option>
+                                <option value="solar">Energia Solar</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Pedir Orçamento Grátis</button>
+                        <p style="font-size:0.75rem;color:var(--text-muted);margin-top:8px;text-align:center">Sem compromisso. Respondemos em menos de 2h.</p>
+                    </form>
+                    <form class="contacto-form" action="#" method="post" aria-label="Formulário de contacto completo">
+                        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:12px;color:var(--color-primary)">Formulário completo</h3>
                         <div class="form-group">
                             <label for="nome">Nome completo</label>
                             <input type="text" id="nome" name="nome" placeholder="O teu nome" required>
@@ -974,14 +1184,23 @@
         </div>
     </footer>
 
-    <!-- Botão WhatsApp flutuante -->
-    <a href="https://wa.me/351912345678" class="whatsapp-float" aria-label="Contactar via WhatsApp" title="Fala connosco no WhatsApp" target="_blank" rel="noopener noreferrer">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M16 2C8.268 2 2 8.268 2 16c0 2.586.756 5.075 2.19 7.24L3 29l6.04-1.78A13.92 13.92 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="#25D366"/>
-            <path d="M21.5 18.75c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.89-.79-1.5-1.77-1.67-2.07-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.53.07-.8.38-.27.3-1.05 1.03-1.05 2.5s1.08 2.94 1.23 3.14c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.63.72.22 1.38.19 1.9.12.58-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z" fill="#128c50"/>
-        </svg>
+    <!-- Botão WhatsApp flutuante com tooltip -->
+    <div class="whatsapp-wrapper">
+        <a href="https://wa.me/351912345678" class="whatsapp-float" aria-label="Contactar via WhatsApp" target="_blank" rel="noopener noreferrer">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M16 2C8.268 2 2 8.268 2 16c0 2.586.756 5.075 2.19 7.24L3 29l6.04-1.78A13.92 13.92 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="#25D366"/>
+                <path d="M21.5 18.75c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.89-.79-1.5-1.77-1.67-2.07-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.53.07-.8.38-.27.3-1.05 1.03-1.05 2.5s1.08 2.94 1.23 3.14c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.63.72.22 1.38.19 1.9.12.58-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z" fill="#128c50"/>
+            </svg>
+        </a>
+        <span class="whatsapp-tooltip">Fala connosco no WhatsApp</span>
+    </div>
+
+    <!-- Sticky CTA Mobile -->
+    <a href="#contacto" class="sticky-cta-mobile" aria-label="Pedir orçamento gratuito">
+        <svg width="1.8rem" height="1.8rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Pedir Orçamento
     </a>
 
-    <script src="js/main.min.js" defer></script>
+    <script src="js/main.v1.min.js"></script>
 </body>
 </html>

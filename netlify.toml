@@ -1,0 +1,52 @@
+[build]
+  publish = '.'
+
+[[headers]]
+  for = '/*'
+  [headers.values]
+    X-Frame-Options = 'DENY'
+    X-Content-Type-Options = 'nosniff'
+    Referrer-Policy = 'strict-origin-when-cross-origin'
+
+# Compressão: Netlify CDN aplica brotli/gzip automaticamente.
+# Estes headers reforçam a política e garantem cache variado por encoding.
+[[headers]]
+  for = '*.html'
+  [headers.values]
+    Content-Type = 'text/html; charset=utf-8'
+    Vary = 'Accept-Encoding'
+    Cache-Control = 'public, max-age=0, must-revalidate'
+
+[[headers]]
+  for = '*.css'
+  [headers.values]
+    Content-Type = 'text/css; charset=utf-8'
+    Vary = 'Accept-Encoding'
+    Cache-Control = 'public, max-age=31536000, immutable'
+
+[[headers]]
+  for = '*.js'
+  [headers.values]
+    Content-Type = 'application/javascript; charset=utf-8'
+    Vary = 'Accept-Encoding'
+    Cache-Control = 'public, max-age=31536000, immutable'
+
+[[headers]]
+  for = '*.svg'
+  [headers.values]
+    Content-Type = 'image/svg+xml'
+    Vary = 'Accept-Encoding'
+    Cache-Control = 'public, max-age=31536000, immutable'
+
+[[headers]]
+  for = '*.json'
+  [headers.values]
+    Content-Type = 'application/json; charset=utf-8'
+    Vary = 'Accept-Encoding'
+    Cache-Control = 'public, max-age=31536000, immutable'
+
+[[headers]]
+  for = '*.woff2'
+  [headers.values]
+    Content-Type = 'font/woff2'
+    Cache-Control = 'public, max-age=31536000, immutable'

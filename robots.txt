@@ -1,0 +1,12 @@
+# Trio Elétrico - robots.txt
+# https://trioeletrico.pt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://trioeletrico.pt/sitemap.xml
+
+# Disallow admin/internal paths (none currently, but placeholders)
+Disallow: /css/
+Disallow: /js/

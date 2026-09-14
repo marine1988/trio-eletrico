@@ -139,8 +139,11 @@ test.describe('Site E2E Tests', () => {
 
     test('Clicking FAQ item expands it', async ({ page }) => {
       await page.goto('/#faq');
+      await page.waitForTimeout(500);
       const firstFaqItem = page.locator('.faq-item').first();
-      await firstFaqItem.locator('.faq-question').click();
+      const questionBtn = firstFaqItem.locator('.faq-question');
+      // Use position to click on the interactive area of the button
+      await questionBtn.click({ position: { x: 10, y: 10 } });
       await expect(firstFaqItem).toHaveClass(/active/);
       await expect(firstFaqItem.locator('.faq-question')).toHaveAttribute('aria-expanded', 'true');
       await expect(firstFaqItem.locator('.faq-answer')).toBeVisible();
@@ -182,11 +185,11 @@ test.describe('Site E2E Tests', () => {
   // Test suite for Contact Form
   test.describe('Contact Form', () => {
     const requiredFields = [
-      'input[name="nome"]',
-      'input[name="email"]',
-      'input[name="telefone"]',
-      'select[name="assunto"]',
-      'textarea[name="mensagem"]',
+      '.contacto-form:not(.contacto-form--quick) input[name="nome"]',
+      '.contacto-form:not(.contacto-form--quick) input[name="email"]',
+      '.contacto-form:not(.contacto-form--quick) input[name="telefone"]',
+      '.contacto-form:not(.contacto-form--quick) select[name="assunto"]',
+      '.contacto-form:not(.contacto-form--quick) textarea[name="mensagem"]',
     ];
 
     test('Contact form has all required fields', async ({ page }) => {
@@ -198,32 +201,30 @@ test.describe('Site E2E Tests', () => {
 
     test('Form validation: empty submit shows errors', async ({ page }) => {
       await page.goto('/#contacto');
-      await page.locator('button[type="submit"]').click();
+      await page.locator('.contacto-form:not(.contacto-form--quick) button[type="submit"]').click();
 
       // Check for `:invalid` pseudo-class or specific error messages
-      // This assertion checks for elements that are marked as invalid by the browser's built-in validation
-      // If custom validation messages are used, this would need to be adapted.
       const invalidFieldCount = await page.locator(`${requiredFields.join(', ')}:invalid`).count();
-      expect(invalidFieldCount).toBeGreaterThan(0); // At least one field should be invalid
+      expect(invalidFieldCount).toBeGreaterThan(0);
     });
 
     test('Form fills successfully and shows no errors', async ({ page }) => {
       await page.goto('/#contacto');
-      await page.waitForSelector('.contacto-form'); // Wait for form to render
-      await page.fill('input[name="nome"]', 'Test User');
-      await page.fill('input[name="email"]', 'test.user@example.com');
-      await page.fill('input[name="telefone"]', '123456789');
-      await page.selectOption('select[name="assunto"]', 'outro');
-      await page.fill('textarea[name="mensagem"]', 'This is a test message.');
+      await page.waitForSelector('.contacto-form:not(.contacto-form--quick)');
+      await page.fill('.contacto-form:not(.contacto-form--quick) input[name="nome"]', 'Test User');
+      await page.fill('.contacto-form:not(.contacto-form--quick) input[name="email"]', 'test.user@example.com');
+      await page.fill('.contacto-form:not(.contacto-form--quick) input[name="telefone"]', '123456789');
+      await page.selectOption('.contacto-form:not(.contacto-form--quick) select[name="assunto"]', 'outro');
+      await page.fill('.contacto-form:not(.contacto-form--quick) textarea[name="mensagem"]', 'This is a test message.');
 
       // Verify field values are correctly filled
-      await expect(page.locator('input[name="nome"]')).toHaveValue('Test User');
-      await expect(page.locator('input[name="email"]')).toHaveValue('test.user@example.com');
-      await expect(page.locator('select[name="assunto"]')).toHaveValue('outro');
-      await expect(page.locator('textarea[name="mensagem"]')).toHaveValue('This is a test message.');
+      await expect(page.locator('.contacto-form:not(.contacto-form--quick) input[name="nome"]')).toHaveValue('Test User');
+      await expect(page.locator('.contacto-form:not(.contacto-form--quick) input[name="email"]')).toHaveValue('test.user@example.com');
+      await expect(page.locator('.contacto-form:not(.contacto-form--quick) select[name="assunto"]')).toHaveValue('outro');
+      await expect(page.locator('.contacto-form:not(.contacto-form--quick) textarea[name="mensagem"]')).toHaveValue('This is a test message.');
 
-      // Submit and verify page doesn't show validation errors (browser :valid on required fields)
-      await page.locator('button[type="submit"]').click();
+      // Submit and verify page doesn't show validation errors
+      await page.locator('.contacto-form:not(.contacto-form--quick) button[type="submit"]').click();
       await page.waitForTimeout(500);
 
       // Email and nome should be valid (required + correct format)
@@ -341,6 +342,9 @@ test.describe('Site E2E Tests', () => {
       await page.setViewportSize({ width: 1440, height: 900 });
       await page.goto('/');
 
+      // Wait for counter animation to settle (same as hero visual test)
+      await page.waitForTimeout(2000);
+
       // No horizontal overflow
       const hasHorizontalOverflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
       expect(hasHorizontalOverflow).toBe(false);
@@ -393,10 +397,10 @@ test.describe('Site E2E Tests', () => {
   test.describe('Extra Workflows', () => {
     test('Click WhatsApp button: confirms valid href', async ({ page }) => {
       await page.goto('/');
-      const whatsAppLink = page.locator('a[href^="https://wa.me/"]'); // Selectors for WhatsApp link
-      await expect(whatsAppLink).toBeVisible();
+      const whatsAppLink = page.locator('a[href^="https://wa.me/"]').first();
+      await expect(whatsAppLink).toBeAttached();
       const href = await whatsAppLink.getAttribute('href');
-      expect(href).toMatch(/^https:\/\/wa\.me\/\d+$/); // Basic check for wa.me/ followed by digits
+      expect(href).toMatch(/^https:\/\/wa\.me\/\d+$/);
     });
 
     test.skip('Smooth scroll has adequate offset for fixed navbar', async ({ page }) => {

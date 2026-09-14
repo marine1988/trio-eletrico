@@ -1,0 +1,21 @@
+{
+  "name": "Trio Elétrico",
+  "short_name": "Trio Elétrico",
+  "description": "Instalações elétricas residenciais, comerciais e industriais na Península de Setúbal e Grande Lisboa",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A2540",
+  "theme_color": "#0A2540",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
