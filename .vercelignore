@@ -1,19 +1,41 @@
-# Excluído do deploy Vercel (projeto é estático puro)
+# Excluído do deploy Vercel — só o que o site SERVE deve ser publicado.
+# (O CLI sobe o sistema de ficheiros local; sem esta lista, publica também
+#  a auditoria, os testes e o código-fonte não usado.)
+
+# Dependências e ambientes
 node_modules/
 .venv/
 venv/
+
+# Testes e automação
 tests/
 test-results/
 playwright-report/
 screenshots/
+audit/
 scripts/
 assets/src/
+.github/
+
+# Fontes não servidas (o site carrega css/style.v1.min.css, css/style.min.css e js/main.v1.min.js)
+css/style.css
+js/main.js
+js/main.min.js
+
+# Configuração de desenvolvimento / de outros hosts / documentação
+playwright.config.js
+netlify.toml
+_headers
+_redirects
+README.md
+AUDIT_SPACING_2026_07_01.md
+spacing-audit-results.json
+.vercelignore
+
+# Diversos
 *.py
 *.mjs
 *.cjs
-package-lock.json
-AUDIT_SPACING_2026_07_01.md
-spacing-audit-results.json
 *.gz
 *.bak
 *.bak_*
