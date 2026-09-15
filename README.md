@@ -148,7 +148,26 @@ O harness mede, por combinação página×viewport: `hScroll`, `overflowRight`, 
 - Review/testemunhos no JSON-LD são ilustrativos
 - ⚠️ **BLOQUEADOR DE PUBLICAÇÃO — domínio:** o `canonical`, `og:url` e o JSON-LD apontam para `https://trioeletrico.pt`, que **não pertence a este projeto**: está registado e a servir outra empresa ("Uz-Me Trio Elétrico", Apache/OVH, 94.23.75.235). Definir o domínio final e actualizar `canonical`, `og:url`, `og:image` e o JSON-LD antes de publicar.
 - ⚠️ **Imagens externas:** as 11 fotografias são hotlinks do Unsplash (`images.unsplash.com`). Frágil em produção (rate limit, rede restrita, sem cache própria). Recomendado baixar para `assets/images/` e servir localmente.
-- ⚠️ **Deploy a partir do Git:** `css/style.v1.min.css` e `js/main.v1.min.js` estão no `.gitignore` (`*.v1.min.*`) e **não estão no repositório**. Um deploy que build a partir do Git (Vercel/Netlify por import do repo) serve a página **sem o CSS principal**. Fazer deploy por CLI a partir desta pasta, ou remover essas entradas do `.gitignore`, ou adicionar um passo de build.
+- ⚠️ **Deploy por import do repositório Git:** `css/style.v1.min.css` e `js/main.v1.min.js` estão no `.gitignore` (`*.v1.min.*`) e **não existem no repositório**. Um build a partir do Git (Vercel `git connect` / Netlify por import) serve a página **sem o CSS principal**. O deploy por **CLI** (`npx vercel deploy --prod`) sobe o sistema de ficheiros local e inclui-os corretamente. Só ligar o repositório depois de commitar estes ficheiros ou de adicionar um passo de build.
+
+## Deploy
+
+**Produção:** https://trio-eletrico.vercel.app (alias estável; também `trio-eletrico-marine1988s-projects.vercel.app`)
+
+```bash
+npx vercel deploy --prod --yes     # publica o estado atual da pasta (inclui os .v1.min gitignored)
+npx vercel login                   # se o token expirar (fluxo por dispositivo)
+```
+
+**Verificar produção com o mesmo gate usado em desenvolvimento:**
+
+```bash
+PW_BASE=https://trio-eletrico.vercel.app npm run test:mobile
+PW_BASE=https://trio-eletrico.vercel.app node audit/audit.mjs https://trio-eletrico.vercel.app
+node audit/verify-ux.mjs https://trio-eletrico.vercel.app   # 0 controlos bloqueados / 0 títulos sob o header
+```
+
+As políticas de segurança (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`) estão em `vercel.json` — o `_headers` do Netlify **não** é lido pela Vercel.
 
 ## Licença
 
