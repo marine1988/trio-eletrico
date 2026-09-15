@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "echo 'site estatico: sem dependencias de runtime'",
   "headers": [
     {
       "source": "/(.*)",

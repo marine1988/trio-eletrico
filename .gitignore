@@ -8,6 +8,14 @@ build/
 *.min.js
 *.v1.min.css
 *.v1.min.js
+# ...MAS os ficheiros que o site serve têm de estar no repositório: um deploy
+# que build a partir do Git (Vercel/Netlify por import) só recebe o que está no
+# repositório, e a página ficaria sem o CSS principal — foi exatamente a
+# regressão que deixou o contacto.html sem estilos.
+!css/style.min.css
+!css/style.v1.min.css
+!js/main.min.js
+!js/main.v1.min.js
 
 # Compressed/gzipped files
 *.gz
