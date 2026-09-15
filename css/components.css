@@ -1,0 +1,360 @@
+/* ============================================================
+   components.css — camada de componentes em falta
+   Carregado depois de style.v1.min.css / style.min.css / fixes.css
+   Dono exclusivo desta camada. Define:
+     · theme-toggle__sun / theme-toggle__moon (estado do dark mode)
+     · carrossel de depoimentos (carousel-wrapper/track/nav,
+       testimonial-card, testimonials-dot)
+     · faq-question-text (quebra de linha da pergunta)
+     · .accent, .noSwipe, .gallery-credit
+     · footer-* da página de contacto (footer-content, footer-logo,
+       footer-social, social-icons)
+   Regras: variáveis de :root, sem !important excepto onde outra camada
+   usa !important e a única forma de o neutralizar é responder no mesmo
+   termo (ver cada comentário); respeita prefers-reduced-motion.
+   Nota de convivência: os negativos usados em mobile.css para compensar
+   o padding global de fixes.css (ex.: .faq-list/.faq-icon/.faq-answer
+   com margens negativas) NÃO são contrariados aqui — esta camada não
+   mexe no padding desses elementos.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. THEME TOGGLE (sol / lua)
+   v1 declara `.theme-toggle__icon{animation:fade-in-out .6s forwards}` e
+   os keyframes terminam em opacity:1. Com `forwards`, o valor animado
+   ganha a qualquer declaração normal (incluindo a classe
+   `.theme-toggle__icon--hidden` que o JS aplica), pelo que o sol e a lua
+   ficavam ambos visíveis sobrepostos. Retiramos a animação e passamos o
+   estado a ser decidido por [data-theme] — o mesmo valor que o JS
+   escreve no <html> antes da primeira pintura (anti-FOUC), pelo que as
+   duas fontes de verdade concordam sempre.
+   ------------------------------------------------------------ */
+.theme-toggle__sun,
+.theme-toggle__moon {
+    opacity: 1;
+    animation: none;
+    transition: opacity var(--transition);
+}
+.theme-toggle__moon {
+    opacity: 0;
+    pointer-events: none;
+}
+[data-theme="dark"] .theme-toggle__sun {
+    opacity: 0;
+    pointer-events: none;
+}
+[data-theme="dark"] .theme-toggle__moon {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ------------------------------------------------------------
+   2. DEPOIMENTOS — carrossel
+   O HTML usa .carousel-wrapper > .carousel-track > .testimonial-card,
+   mas v1 só define `.testimonials-track` (classe que não existe no HTML)
+   e não há regra nenhuma para .carousel-wrapper/.carousel-track/
+   .carousel-nav: sem display:flex os cards empilhavam a 172px e o
+   translateX do JS não tinha efeito útil.
+   O JS avança `cards[0].offsetWidth + 12` → margens simétricas de 6px
+   (por isso o +12), em todos os breakpoints, para o passo continuar
+   alinhado com o offsetWidth real.
+   ------------------------------------------------------------ */
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+.carousel-track {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+.testimonial-card {
+    flex: 0 0 auto;
+    margin: 0 6px;
+    min-width: 0;
+}
+/* 769-1024px: 2 cards por vista (igual ao visibleSlides=2 do JS) */
+@media (min-width: 769px) {
+    .testimonial-card { flex: 0 0 calc(50% - 12px); }
+}
+/* >=1025px: 3 cards por vista */
+@media (min-width: 1025px) {
+    .testimonial-card { flex: 0 0 calc(33.333% - 12px); }
+}
+/* o texto nunca pode transbordar nem ser cortado dentro do card */
+.testimonial-text,
+.testimonial-name,
+.testimonial-location {
+    overflow-wrap: break-word;
+}
+.testimonial-author,
+.testimonial-author > div {
+    min-width: 0;
+}
+
+/* ------------------------------------------------------------
+   3. DEPOIMENTOS — navegação (carousel-nav / dots)
+   v1 dá 12x12px aos dots (alvo táctil inaceitável). O botão passa a
+   44x44 e o ponto visível é desenhado num ::before, para o desenho se
+   manter exactamente igual (12px; 36x12px quando activo). O estado
+   activo de v1 (que pintava o próprio botão) é neutralizado para o
+   ::before ser a única fonte do desenho.
+   ------------------------------------------------------------ */
+.carousel-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+.testimonials-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-top: 20px;
+}
+.testimonials-dot {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: none;
+    cursor: pointer;
+}
+.testimonials-dot::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    background: transparent;
+    transition: width var(--transition), border-radius var(--transition),
+        background-color var(--transition), border-color var(--transition);
+}
+.testimonials-dot:hover {
+    transform: none;
+}
+.testimonials-dot:hover::before {
+    border-color: var(--color-accent);
+}
+.testimonials-dot.active {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    transform: none;
+}
+.testimonials-dot.active::before {
+    width: 36px;
+    height: 12px;
+    border-radius: 6px;
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* ------------------------------------------------------------
+   4. DEPOIMENTOS — <=768px: um depoimento por linha
+   Porquê: o JS força visibleSlides=1 e tem autoplay a cada 5s que faz
+   `translateX` no track. Num layout horizontal 1-up isso põe os outros
+   3 cards geometricamente fora do wrapper (clipped por overflow:hidden),
+   o que o harness conta como childOverflow/overflowRight e, sobretudo,
+   dá cards de ~122px de texto em ecrãs pequenos. Com o track em coluna
+   os 4 depoimentos ficam legíveis a 100% da largura, sem overflow
+   horizontal em 320-414px. Como não há deslize, o carousel-nav (setas e
+   dots) não teria função e é escondido neste breakpoint — os 4 cards
+   estão todos visíveis. O transform do JS é anulado (inline style só
+   cede a !important) — é o único !important desta camada usado para
+   contrariar JS, e é no nosso próprio selector.
+   ------------------------------------------------------------ */
+@media (max-width: 768px) {
+    .carousel-track {
+        flex-direction: column;
+        gap: 1rem;
+        will-change: auto;
+        transform: none !important;
+    }
+    .testimonial-card {
+        flex: 0 0 auto;
+        width: 100%;
+        margin: 0;
+    }
+    .carousel-nav {
+        display: none;
+    }
+}
+
+/* fixes.css aplica `.carousel-wrapper > *{padding:1.5rem!important}`, o
+   que roubava 48px de largura a cada card. Neutralizamos só o eixo
+   horizontal: o vertical é compensado por mobile.css (margin-top:-24px)
+   e não deve ser contrariado. */
+.carousel-track {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* ------------------------------------------------------------
+   5. FAQ — .faq-question-text
+   Sem regra própria não havia controlo de quebra/ellipsis. Passa a ser
+   o item flexível do botão (min-width:0 permite encolher abaixo do
+   min-content e o overflow-wrap evita palavras cortadas a 320px).
+   O padding global que fixes.css dá a `[class*="faq-"]` não é tocado
+   aqui: mobile.css compensa-o com margens negativas em <=768px.
+   ------------------------------------------------------------ */
+.faq-question-text {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: break-word;
+    text-align: left;
+    line-height: 1.45;
+}
+
+/* Efeito colateral do padding global: com `max-height:0` o border box não
+   pode encolher abaixo da soma do padding (40px) e o overflow:hidden só
+   corta no padding box — a primeira linha da resposta ficava visível com
+   o item FECHADO (20px de texto cinzento por baixo da pergunta, em todos
+   os viewports). Em vez de mexer no padding (mexido por fixes.css e
+   compensado por mobile.css), esconde-se a resposta fechada com
+   visibility, com atraso na transição para a animação de fecho se ver.
+   Sem !important. */
+.faq-answer {
+    visibility: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease, visibility 0s linear 0.35s;
+}
+.faq-item.active .faq-answer {
+    visibility: visible;
+    transition: max-height 0.35s ease, padding 0.35s ease, visibility 0s;
+}
+
+/* ------------------------------------------------------------
+   6. Avatar dos depoimentos em variante .accent
+   O HTML usa .testimonial-author-avatar.accent (PA e RS); a classe
+   .accent não tinha regra nenhuma. Inverte as cores do avatar.
+   ------------------------------------------------------------ */
+.accent {
+    background: var(--color-accent);
+    color: var(--color-primary);
+}
+
+/* ------------------------------------------------------------
+   7. .noSwipe — controlos que não devem iniciar gestos do carrossel
+   (aplicado em .testimonials-arrows). pan-y mantém o scroll vertical.
+   ------------------------------------------------------------ */
+.noSwipe {
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+/* ------------------------------------------------------------
+   8. GALLERY CREDIT
+   O parágrafo traz estilos inline no HTML (não removíveis sem tocar em
+   HTML); aqui fica a regra da classe e a apresentação dos links, que
+   são os únicos alvos desta região.
+   ------------------------------------------------------------ */
+.gallery-credit {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    text-align: center;
+}
+.gallery-credit a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.gallery-credit a:hover {
+    color: var(--color-accent-dark);
+}
+
+/* ------------------------------------------------------------
+   9. FOOTER da página de contacto
+   contacto.html usa .footer-content/.footer-logo/.footer-social/
+   .social-icons; index.html usa .footer-grid/.footer-brand (definidos em
+   v1). Sem regras, o footer de contacto não tinha grelha nem flex e os
+   links sociais mediam 272x24px. Espelhamos a estrutura de v1 (mesmas
+   proporções de coluna do .footer-grid) para os dois footers ficarem
+   iguais. Inclui a correcção de contraste do logótipo: v1 pinta
+   .logo-text com --color-primary, que sobre o footer azul-escuro ficava
+   ilegível nos dois footers.
+   ------------------------------------------------------------ */
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+@media (min-width: 769px) {
+    .footer-content { grid-template-columns: 2fr 1fr 1fr 1fr; }
+}
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+.footer-logo .logo-icon,
+.footer .logo-icon {
+    display: inline-flex;
+    color: var(--color-accent);
+}
+.footer-logo .logo-text,
+.footer .logo-text {
+    color: var(--color-white);
+}
+.footer-social h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--color-accent);
+}
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color-white);
+    transition: background var(--transition), color var(--transition);
+}
+.social-icons a:hover {
+    background: var(--color-accent);
+    color: var(--color-primary);
+}
+
+/* ------------------------------------------------------------
+   10. Movimento reduzido
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+    .carousel-track,
+    .testimonials-dot,
+    .testimonials-dot::before,
+    .theme-toggle__icon,
+    .theme-toggle__sun,
+    .theme-toggle__moon,
+    .social-icons a {
+        transition: none;
+    }
+}

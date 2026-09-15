@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0A2540">
-    <meta name="theme-color" content="#0A2540">
-    <meta name="theme-color" content="#0A2540">
-    <meta name="theme-color" content="#0A2540">
     <meta name="description" content="Trio Elétrico - Empresa de eletricidade com 3 sócios especializados. Serviços de eletricidade residencial, comercial e industrial nas principais cidades de Portugal.">
     <meta name="keywords" content="eletricista, instalações elétricas, pedido de orçamento, contacto eletricista, eletricidade residencial, eletricidade comercial, eletricidade industrial, reparações elétricas, energia solar, Seixal, Setúbal, Lisboa, Trio Elétrico">
     <title>Trio Elétrico | Contacto e Pedido de Orçamento</title>
@@ -46,7 +43,7 @@
     <link rel="preconnect" href="https://images.unsplash.com">
 
     <!-- Preload critical resources: CSS + fonts (Lighthouse "Preload key fonts") -->
-    <link rel="preload" href="css/style.min.css" as="style">
+    <link rel="preload" href="css/style.v1.min.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.rel='stylesheet'">
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiA.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYAZ9hiA.woff2" as="font" type="font/woff2" crossorigin>
@@ -406,11 +403,20 @@
     }
     </script>
 
-    <link rel="stylesheet" href="css/style.min.css" media="print" onload="this.media='all'">
+    <!-- Folha de estilos principal (bloqueante: é a base do layout) -->
+    <link rel="stylesheet" href="css/style.v1.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/style.v1.min.css"></noscript>
     <noscript><link rel="stylesheet" href="css/style.min.css"></noscript>
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+
+    <!-- Camadas de overrides (mesma ordem que index.html) -->
+    <link rel="stylesheet" href="css/fixes.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/overlays.css">
+    <link rel="stylesheet" href="css/mobile.css">
 
     <!-- Anti-FOUC: aplicar tema antes do primeiro paint -->
     <script>

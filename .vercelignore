@@ -1,0 +1,19 @@
+# Excluído do deploy Vercel (projeto é estático puro)
+node_modules/
+.venv/
+venv/
+tests/
+test-results/
+playwright-report/
+screenshots/
+scripts/
+assets/src/
+*.py
+*.mjs
+*.cjs
+package-lock.json
+AUDIT_SPACING_2026_07_01.md
+spacing-audit-results.json
+*.gz
+*.bak
+*.bak_*

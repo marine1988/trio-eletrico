@@ -20,12 +20,23 @@ Site profissional de uma página para a **Trio Eléctrico, Instalações Eléctr
 
 ```
 trio-eletrico/
-├── index.html          # Página principal (9 secções)
+├── index.html            # Página principal (9 secções)
+├── contacto.html         # Página de contacto (formulário completo)
 ├── css/
-│   └── style.v1.min.css # Estilos minificados (mobile-first, responsivo)
-├── js/
-│   └── main.v1.min.js  # Menu mobile, FAQ accordion, smooth scroll (minificado)
-├── favicon.svg         # Favicon SVG
+│   ├── style.v1.min.css  # Folha PRINCIPAL (380 regras) — não editar à mão
+│   ├── style.min.css     # Pequeno override (1 regra)
+│   ├── fixes.css         # Correções de spacing/overlays herdadas
+│   ├── components.css    # Componentes: carrossel, dark-mode, FAQ, footer
+│   ├── overlays.css      # Elementos position:fixed + stack z-index
+│   └── mobile.css        # Mobile + acessibilidade táctil (carregado por último)
+├── js/main.v1.min.js     # Menu mobile, FAQ accordion, smooth scroll, carrossel, dark mode
+├── audit/
+│   ├── audit.mjs         # Harness multi-viewport (8 viewports × 2 páginas)
+│   ├── shots.mjs         # Screenshots por secção
+│   ├── img-check.mjs     # Verificação isolada de imagens
+│   └── reports/          # Relatórios dos agentes (antes/depois com números)
+├── tests/                # Playwright: e2e, responsividade, a11y, mobile, stylesheets
+├── assets/images/        # Assets locais
 └── README.md
 ```
 
@@ -105,11 +116,39 @@ Todas as imagens usam SVG inline para ilustrações. Para produção, substituir
 - Navegação por teclado (tabindex, focus)
 - `aria-expanded` no menu mobile e FAQ
 
+## Arquitetura CSS (camadas — ordem obrigatória)
+
+Ambas as páginas (`index.html` e `contacto.html`) carregam, por esta ordem:
+
+1. CSS crítico inline no `<head>` (variáveis `:root`, acima da dobra)
+2. `css/style.v1.min.css` — **folha principal** (380 regras) — não editar à mão
+3. `css/style.min.css` — override pequeno
+4. `css/fixes.css` → 5. `components.css` → 6. `overlays.css` → 7. `mobile.css`
+
+⚠️ **Regressão já ocorrida:** o `contacto.html` carregava apenas `style.min.css` (156 bytes, **1 regra**) e o `fixes.css` não estava ligado a **nenhuma** página — resultado: 33 classes sem regras, inputs com estilo default do browser e scroll horizontal de +32px em todos os viewports. Uma camada só conta como aplicada quando está ligada **nas duas** páginas; o teste `tests/stylesheets.spec.js` garante isso.
+
+## Auditoria e QA automática
+
+```bash
+npm run audit           # harness: 8 viewports × 2 páginas → audit/audit-report.json + screenshots
+npm run audit:shots     # screenshots por secção → audit/sections/ (inspeção visual)
+npm run test            # suite Playwright completa
+npm run test:mobile     # gate mobile/a11y + regressão de folhas de estilos
+node audit/img-check.mjs # verificação isolada de imagens (0 respostas não-200)
+```
+
+O harness mede, por combinação página×viewport: `hScroll`, `overflowRight`, `childOverflow`, `truncated`, `tinyTargets`, `classesNoRule`, `overlapsHeader`, `imgsBroken`, `forms`, `sections` e erros de consola. Para trabalho em paralelo, definir `AUDIT_TAG=<nome>` para não colidir com outros relatórios.
+
+**Metas do gate:** `hScroll = 0`, `overflowRight = []`, `tinyTargets = []`, `classesNoRule = []`, `imgsBroken = []`, `overlapsHeader = 0` em 320/360/375/390/414/600/768/820/1024/1440.
+
 ## Notas
 
 - Telefone e email são placeholders pendentes de confirmação pelo proprietário
 - Os nomes dos sócios nos cards são fictícios — aguardam dados reais
 - Review/testemunhos no JSON-LD são ilustrativos
+- ⚠️ **BLOQUEADOR DE PUBLICAÇÃO — domínio:** o `canonical`, `og:url` e o JSON-LD apontam para `https://trioeletrico.pt`, que **não pertence a este projeto**: está registado e a servir outra empresa ("Uz-Me Trio Elétrico", Apache/OVH, 94.23.75.235). Definir o domínio final e actualizar `canonical`, `og:url`, `og:image` e o JSON-LD antes de publicar.
+- ⚠️ **Imagens externas:** as 11 fotografias são hotlinks do Unsplash (`images.unsplash.com`). Frágil em produção (rate limit, rede restrita, sem cache própria). Recomendado baixar para `assets/images/` e servir localmente.
+- ⚠️ **Deploy a partir do Git:** `css/style.v1.min.css` e `js/main.v1.min.js` estão no `.gitignore` (`*.v1.min.*`) e **não estão no repositório**. Um deploy que build a partir do Git (Vercel/Netlify por import do repo) serve a página **sem o CSS principal**. Fazer deploy por CLI a partir desta pasta, ou remover essas entradas do `.gitignore`, ou adicionar um passo de build.
 
 ## Licença
 

@@ -1,0 +1,806 @@
+/* ============================================================
+   mobile.css — camada mobile / acessibilidade táctil
+   Carregado por último (depois de overlays.css)
+   Camada responsável por: tap targets >= 44x44, formulários e
+   labels em mobile, espaçamento/alturas de secção em <=768px,
+   overflow horizontal residual (320-768px), legibilidade.
+   Regras: usar variáveis de :root, sem !important, testar em
+   320/360/375/390/414/600/768/820/1024 (desktop >= 1280 intocado).
+
+   ESTRATÉGIA / NOTA IMPORTANTE
+   fixes.css aplica padding vertical às secções com !important
+   (section{padding:5rem 0!important}). Nesta camada não usamos
+   !important, por isso não é possível reescrever esse valor:
+   o espaço é recuperado por margens negativas de igual valor no
+   .container (o padding continua no sítio, apenas colapsa com a
+   margem do filho). O resultado visual é equivalente a um padding
+   de secção mais apertado, sem tocar em fixes.css.
+   ============================================================ */
+
+:root {
+  /* gutter táctil mínimo recomendado (WCAG 2.5.5 / Apple HIG) */
+  --m-tap: 44px;
+  /* gutter lateral em mobile */
+  --m-gutter: 16px;
+  /* ritmo vertical compacto (<=768px) */
+  --m-space-1: 8px;
+  --m-space-2: 12px;
+  --m-space-3: 20px;
+  --m-space-4: 28px;
+  /* padding vertical efectivo das secções em mobile */
+  --m-section-pad: 24px;
+  /* quanto é preciso "puxar" o container para anular o 5rem !important */
+  --m-section-pull: 60px;
+}
+
+/* ============================================================
+   1) MOBILE BASE (<= 768px) — grelha, ritmo e tipografia
+   ============================================================ */
+@media (max-width: 768px) {
+  /* gutter lateral: 16px é o mínimo recomendado em mobile e devolve
+     largura útil ao texto (menos linhas = menos altura) */
+  .container {
+    padding-left: var(--m-gutter);
+    padding-right: var(--m-gutter);
+  }
+
+  /* respiração de secção: 160px (80+80 com !important) -> 48px */
+  main > section:not(.hero) > .container {
+    margin-top: calc(-1 * var(--m-section-pull));
+    margin-bottom: calc(-1 * var(--m-section-pull));
+  }
+
+  /* cabeçalhos de secção */
+  .section-header {
+    margin-bottom: var(--m-space-3);
+  }
+  /* fixes.css força .section-header{margin-bottom:3rem!important}:
+     como não usamos !important, o espaço é recuperado no irmão seguinte */
+  .section-header + * {
+    margin-top: calc(-1 * var(--m-space-4));
+  }
+  .section-header h2 {
+    font-size: 1.5rem;
+    line-height: 1.22;
+    margin-bottom: var(--m-space-1);
+  }
+  .section-header p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .section-tag {
+    font-size: 0.78rem;
+    padding: 3px 12px;
+    margin-bottom: 10px;
+  }
+  /* a variante escura é full-bleed: acompanha o novo gutter */
+  .section-header--dark {
+    padding: 20px var(--m-gutter) 0;
+    margin: 0 calc(-1 * var(--m-gutter)) var(--m-space-3);
+  }
+
+  /* entrelinha mais curta em blocos densos de texto */
+  .service-card p,
+  .feature-card p,
+  .society-card > p,
+  .areas-content p,
+  .section-header p,
+  .testimonial-text,
+  .faq-answer p {
+    line-height: 1.5;
+  }
+
+  /* ==========================================================
+     2) TAP TARGETS >= 44x44 (WCAG 2.5.5)
+     ========================================================== */
+  .header .logo,
+  .footer-brand .logo {
+    min-height: var(--m-tap);
+  }
+
+  .footer-links a,
+  .footer-contact a {
+    display: flex;
+    align-items: center;
+    min-height: var(--m-tap);
+  }
+
+  /* ícones sociais: caixa táctil 44x44 em vez de 24px de altura */
+  .social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--m-space-1);
+  }
+  .social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--m-tap);
+    height: var(--m-tap);
+  }
+  .social-icons a svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* créditos de galeria (bloco de texto legal): o padding vertical
+     em elemento inline só aumenta a área táctil, não o layout */
+  .gallery-credit a {
+    display: inline;
+    padding: 15px 2px;
+  }
+
+  /* dots do carrossel: caixa 44x44, ponto desenhado por ::before
+     (mantém exactamente o visual 12px / 36x12px activo) */
+  .testimonials-dots {
+    gap: 0;
+    margin-top: var(--m-space-2);
+  }
+  .testimonials-dot,
+  .testimonials-dot.active {
+    width: var(--m-tap);
+    height: var(--m-tap);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .testimonials-dot::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    background: transparent;
+    transition: width 0.3s ease, border-radius 0.3s ease,
+      background-color 0.3s ease, border-color 0.3s ease;
+  }
+  .testimonials-dot.active::before {
+    width: 36px;
+    height: 12px;
+    border-radius: 6px;
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  .nav-toggle,
+  .theme-toggle {
+    min-width: var(--m-tap);
+    min-height: var(--m-tap);
+  }
+  .theme-toggle {
+    margin-left: var(--m-space-2);
+  }
+
+  /* ==========================================================
+     3) FORMULÁRIOS — >=16px evita zoom automático no iOS,
+        labels com respiração vertical
+     ========================================================== */
+  input,
+  select,
+  textarea,
+  button,
+  .btn {
+    font-size: 16px;
+  }
+  .form-group label,
+  .contacto-form label,
+  label {
+    font-size: 14px;
+    line-height: 1.35;
+    /* respiração entre label e campo (antes: 6px, colado) */
+    margin-bottom: 10px;
+  }
+  .form-group {
+    margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group select {
+    min-height: var(--m-tap);
+    padding: 10px 14px;
+  }
+  .form-group textarea {
+    min-height: 84px;
+    padding: 10px 14px;
+  }
+  .contacto-form,
+  .contacto-form--quick {
+    padding: 20px var(--m-gutter) 64px;
+  }
+  .contacto-form--quick {
+    margin-bottom: var(--m-space-2);
+  }
+  .contacto-form h2,
+  .contacto-form h3 {
+    margin-bottom: 8px;
+  }
+  .validation-message,
+  .contacto-form .urgency-badge {
+    margin-bottom: var(--m-space-2);
+  }
+
+  /* ==========================================================
+     4) HERO
+     ========================================================== */
+  .hero {
+    padding-bottom: 0;
+  }
+  .hero-grid {
+    gap: var(--m-space-2);
+  }
+  .hero-content h1 {
+    font-size: 1.5rem;
+    line-height: 1.18;
+    margin-bottom: var(--m-space-2);
+  }
+  .hero-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: var(--m-space-2);
+  }
+  .hero-actions {
+    gap: var(--m-space-2);
+    margin-bottom: var(--m-space-3);
+  }
+  .hero-cta-main {
+    min-height: 52px;
+  }
+  .urgency-badge {
+    margin-top: var(--m-space-1);
+  }
+  .scarcity-banner {
+    margin-top: 6px;
+  }
+  .social-proof-bar {
+    margin-top: var(--m-space-2);
+    padding: 8px 12px;
+    gap: 10px;
+  }
+  .social-proof-bar .avatar {
+    width: 32px;
+    height: 32px;
+  }
+  .hero-trust-strip {
+    margin-top: 10px;
+    padding: 8px 0;
+    gap: 10px;
+  }
+  .hero-trust-item {
+    font-size: 0.72rem;
+  }
+  .hero-stats {
+    margin-top: var(--m-space-2);
+    gap: var(--m-space-2);
+    padding-bottom: var(--m-space-1);
+    /* fixes.css fixa gap:1.5rem!important: com 3 colunas fixas os
+       três indicadores ficam numa só linha (2 linhas antes) */
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+  }
+  .stat-number {
+    font-size: 1.35rem;
+    margin-bottom: 2px;
+  }
+  .hero-image img,
+  .hero-photo {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+  }
+
+  /* ==========================================================
+     5) SOBRE — fotos e dados da empresa
+     ========================================================== */
+  .team-banner img {
+    height: 100px;
+  }
+  .team-banner {
+    margin-top: var(--m-space-2);
+  }
+  .company-data {
+    padding: var(--m-section-pad) var(--m-gutter);
+    margin-top: var(--m-space-2);
+  }
+  .company-data h3 {
+    margin-bottom: 10px;
+  }
+  /* tabela de dados: entrelinha e corpo mais compactos (o gap é !important) */
+  .company-data > div {
+    line-height: 1.35;
+    font-size: 0.85rem;
+  }
+  .society-grid {
+    gap: var(--m-space-2);
+  }
+  .society-card {
+    padding: var(--m-gutter);
+  }
+  .society-img-wrapper {
+    height: 150px;
+    padding: 0;
+    margin-bottom: 10px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+  .society-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+  .society-role {
+    margin-bottom: 4px;
+  }
+  .society-card > p {
+    font-size: 0.88rem;
+    line-height: 1.45;
+    margin-bottom: var(--m-space-1);
+  }
+  .society-skills {
+    gap: 2px;
+  }
+  .society-skills li {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  /* ==========================================================
+     6) SERVIÇOS + DIFERENCIAIS (6 cartões cada)
+     ========================================================== */
+  /* cartão de serviço: ícone e título na mesma linha -> menos altura
+     sem estreitar o parágrafo (que ocupa a largura toda na 2ª linha) */
+  .service-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 10px;
+    text-align: left;
+  }
+  .service-icon-wrapper {
+    grid-column: 1;
+    grid-row: 1;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+  }
+  .service-card svg {
+    width: 22px;
+    height: 22px;
+  }
+  .service-card h3 {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.05rem;
+    margin-bottom: 0;
+  }
+  .service-card p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+
+  .feature-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 10px;
+  }
+  .feature-number {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
+  .feature-card h3 {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.05rem;
+    margin-bottom: 0;
+  }
+  .feature-card p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 0.9rem;
+    margin-top: 6px;
+  }
+
+  /* ==========================================================
+     7) ÁREAS
+     ========================================================== */
+  .areas-grid {
+    gap: var(--m-space-4);
+  }
+  .areas-content h2 {
+    margin-bottom: var(--m-space-1);
+  }
+  .areas-content p {
+    font-size: 1rem;
+    margin-bottom: var(--m-space-2);
+  }
+  .areas-list {
+    gap: var(--m-space-1);
+  }
+  .areas-list li {
+    font-size: 1rem;
+  }
+  .areas-image svg,
+  .areas-image img {
+    width: 100%;
+    max-height: 180px;
+  }
+
+  /* ==========================================================
+     8) GALERIA — 2 colunas em mobile (6 imagens em 3 linhas
+        em vez de 6 blocos de 216px)
+     ========================================================== */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--m-space-2);
+    margin-top: var(--m-space-3);
+  }
+  .gallery-item {
+    aspect-ratio: 3 / 2;
+  }
+  .gallery-overlay {
+    padding: 10px;
+  }
+  .gallery-caption {
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  /* ==========================================================
+     9) DEPOIMENTOS (4 cartões) + BADGES
+     ========================================================== */
+  .trust-badges {
+    margin-top: var(--m-space-3);
+    padding: var(--m-space-2);
+    gap: var(--m-space-2);
+  }
+  .trust-badge {
+    font-size: 0.85rem;
+  }
+  .trust-badge-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .trust-badge-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  /* fixes.css aplica padding 1.5rem!important a .carousel-wrapper > *:
+     o topo do track é anulado (o espaço entre o último cartão, as setas e
+     os dots mantém-se) */
+  .carousel-track {
+    margin-top: calc(-1 * 24px);
+  }
+  .testimonial-stars {
+    font-size: 0.95rem;
+    margin-bottom: var(--m-space-1);
+  }
+  .testimonial-text {
+    font-size: 0.92rem;
+    line-height: 1.45;
+    margin-bottom: var(--m-space-2);
+  }
+  .testimonial-author {
+    gap: 10px;
+  }
+  .testimonial-author-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 0.85rem;
+  }
+  .testimonial-name {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+  .testimonial-location {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin-top: 0;
+  }
+  .testimonials-arrows {
+    margin-top: 0;
+  }
+
+  /* ==========================================================
+     10) FAQ — o padding !important do fixes.css também apanha
+         .faq-question-text/.faq-icon: anulado com margens
+         negativas (imagem visual inalterada, menos altura)
+     ========================================================== */
+  .faq-question-text {
+    margin: calc(-1 * 20px) calc(-1 * 24px);
+    line-height: 1.3;
+  }
+  .faq-icon {
+    margin: calc(-1 * 20px) calc(-1 * 24px);
+  }
+  .faq-answer {
+    margin-top: calc(-1 * 20px);
+    margin-bottom: calc(-1 * 20px);
+  }
+  /* [class*="faq-"] do fixes.css dá 1.25rem de padding à lista */
+  .faq-list {
+    margin-top: calc(-1 * var(--m-space-3));
+    margin-bottom: calc(-1 * var(--m-space-3));
+  }
+  .faq-answer p {
+    font-size: 0.92rem;
+  }
+
+  /* ==========================================================
+     11) CONTACTO (secção na home + página contacto.html)
+     ========================================================== */
+  .contacto-grid {
+    gap: var(--m-space-2);
+  }
+  .contacto-info > p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: var(--m-space-2);
+  }
+  /* badge de urgência: cabe numa linha (antes partia em duas) */
+  .contacto-info .urgency-badge,
+  .contacto-form .urgency-badge {
+    font-size: 0.76rem;
+  }
+  .contacto-info h2,
+  .contact-section h2 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+  .contacto-methods {
+    gap: 10px;
+  }
+  .contacto-item {
+    padding: 12px;
+    gap: 10px;
+  }
+  .contacto-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .contacto-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .contact-details li {
+    gap: 10px;
+  }
+  .contacto-item strong,
+  .contacto-item span,
+  .contact-details span {
+    font-size: 0.85rem;
+    line-height: 1.32;
+  }
+  .contacto-trust-badges {
+    margin-top: var(--m-space-3);
+    padding: var(--m-gutter);
+    gap: var(--m-space-2);
+  }
+
+  /* ==========================================================
+     12) FOOTER
+     ========================================================== */
+  .footer-brand p {
+    margin-top: 8px;
+    font-size: 0.9rem;
+  }
+  .footer-links ul,
+  .footer-contact ul,
+  .footer-contact li {
+    gap: 2px;
+  }
+  .footer-bottom {
+    padding: var(--m-space-2) 0;
+    gap: var(--m-space-2);
+  }
+  .footer-bottom p {
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  /* ==========================================================
+     13) OVERFLOW / TRUNCAGEM a 320px
+     ========================================================== */
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  span,
+  strong,
+  a {
+    overflow-wrap: break-word;
+  }
+  .testimonial-author > div {
+    min-width: 0;
+  }
+  .faq-question {
+    gap: var(--m-space-1);
+  }
+  .faq-question-text {
+    min-width: 0;
+  }
+  /* ícones decorativos nunca devem crescer para lá do contentor */
+  .contacto-icon svg,
+  .trust-badge-icon svg,
+  .urgency-badge svg,
+  .service-icon-wrapper svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+/* ============================================================
+   14) TELEMÓVEIS ESTREITOS (<= 480px) — o ajuste fino
+   ============================================================ */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.4rem;
+  }
+  .hero-photo,
+  .hero-image img {
+    height: 110px;
+  }
+  .stat-number {
+    font-size: 1.2rem;
+  }
+  .stat-label {
+    font-size: 0.68rem;
+    line-height: 1.3;
+  }
+  .society-img-wrapper {
+    height: 132px;
+  }
+  .areas-image svg,
+  .areas-image img {
+    max-height: 140px;
+  }
+  .gallery-grid {
+    gap: 10px;
+  }
+  .section-header h2 {
+    font-size: 1.4rem;
+  }
+  /* formulário em coluna única (o par nome/telefone fica apertado) */
+  .contacto-form--quick .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   15) TABLET (481-768px) — mesma linguagem, menos compressão
+   ============================================================ */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* em tablet há espaço: gutter um pouco maior para não colar às margens */
+  .container {
+    padding-left: var(--m-space-4);
+    padding-right: var(--m-space-4);
+  }
+  .section-header--dark {
+    margin-left: calc(-1 * var(--m-space-4));
+    margin-right: calc(-1 * var(--m-space-4));
+  }
+}
+
+/* ============================================================
+   16) ≤1024px — rede de segurança de overflow (tablets,
+       telemóveis em landscape)
+   ============================================================ */
+@media (max-width: 1024px) {
+  img,
+  svg,
+  video {
+    max-width: 100%;
+  }
+  .gallery-item,
+  .service-card,
+  .feature-card,
+  .society-card,
+  .testimonial-card {
+    min-width: 0;
+  }
+}
+
+/* ============================================================
+   17) PREFERÊNCIAS DO UTILIZADOR
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-dot::before,
+  .testimonials-dot,
+  .gallery-item,
+  .gallery-item img {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* ecrãs sem hover (táctil): sem deslocamentos que desalinham o alvo */
+@media (hover: none) {
+  .gallery-item:hover,
+  .service-card:hover,
+  .feature-card:hover,
+  .society-card:hover,
+  .testimonial-card:hover {
+    transform: none;
+  }
+}
+
+/* ============================================================
+   4) ALVOS TÁCTEIS DO HEADER — qualquer largura
+   Causa: os ícones do toggle são position:absolute (não criam largura
+   mínima) e o header é display:flex com flex-shrink:1, pelo que a
+   largura:44px declarada pelo v1 é ignorada quando o espaço aperta:
+   medido 18x44px a 769-820px e 41x44px a 1024px. Um botão de 18px não é
+   tocável. Trava-se a caixa e impede-se o encolhimento.
+   ============================================================ */
+.theme-toggle,
+.nav-toggle {
+  flex: 0 0 auto;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* ============================================================
+   5) TABLET (769px - 1024px) — header sem transbordo
+   Causa medida: a 769px o .nav mede 680px e termina em 843px (container
+   termina em 769) -> os últimos links ficam cortados, e o .logo encolhia
+   para 93px. A navegação passa a escalar com a largura disponível em vez
+   de ter métricas fixas, e o logótipo deixa de poder encolher.
+   ============================================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .header .logo {
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+  .header .nav {
+    flex: 1 1 auto;
+    min-width: 0;
+    justify-content: flex-end;
+  }
+  .nav ul {
+    gap: clamp(6px, 1.05vw, 16px);
+  }
+  .nav a {
+    font-size: clamp(0.8rem, 1.28vw, 1rem);
+    white-space: nowrap;
+  }
+  .theme-toggle {
+    margin-left: 10px;
+  }
+}
+
+/* ============================================================
+   6) ALVOS EM LISTAS DE RODAPÉ/CONTACTOS (>=769px) — WCAG 2.5.8 (AA)
+   Causa medida: em >=769px os links do footer e dos contactos mediam 17px
+   de altura (abaixo do mínimo 24x24 do critério AA). Em <=768px já existia
+   a regra táctil de 44px; aqui basta garantir os 24px sem inflacionar o
+   rodapé, mantendo o alvo >=24px em ambas as dimensões.
+   ============================================================ */
+@media (min-width: 769px) {
+  .footer-links a,
+  .footer-contact a,
+  .footer-bottom a,
+  .contact-details a,
+  main a[href^="tel:"],
+  main a[href^="mailto:"] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+}

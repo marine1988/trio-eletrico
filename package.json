@@ -5,7 +5,10 @@
   "description": "Site profissional de uma página para a empresa **Trio Elétrico**, uma empresa de eletricidade com 3 sócios eletricistas.",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --reporter=list"
+    "test": "npx playwright test --reporter=list",
+    "test:mobile": "npx playwright test tests/mobile.spec.js tests/stylesheets.spec.js --reporter=list",
+    "audit": "node audit/audit.mjs",
+    "audit:shots": "node audit/shots.mjs"
   },
   "keywords": [],
   "author": "",

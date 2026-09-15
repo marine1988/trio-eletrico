@@ -287,6 +287,25 @@ test.describe('Site E2E Tests', () => {
 
   // Test suite for Visual Regression
   test.describe('Visual', () => {
+    // O carrossel de depoimentos tem autoplay (setInterval em js/main.js): sem
+    // o congelar, o slide visível depende do timing e a baseline visual falha
+    // de forma intermitente (medido: 22803 px de diferença, ~1%). Este hook
+    // fixa o carrossel no 1.º slide e desliga transições/autoplay antes de
+    // qualquer comparação com snapshot. Não altera a página em produção.
+    test.beforeEach(async ({ page }) => {
+      await page.addInitScript(() => {
+        const freeze = () => {
+          for (let i = 1; i < 20000; i++) { clearInterval(i); clearTimeout(i); }
+          const track = document.querySelector('.carousel-track');
+          if (track) track.style.transition = 'none';
+          const first = document.querySelector('.testimonials-dot');
+          if (first) first.click();
+        };
+        window.__freezeCarousel = freeze;
+        document.addEventListener('DOMContentLoaded', () => setTimeout(freeze, 300), { once: true });
+      });
+    });
+
     test('Hero section visual regression', async ({ page }) => {
       await page.goto('/');
       // Wait for counter animation to finish (1500ms duration + buffer)

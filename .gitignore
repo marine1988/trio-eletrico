@@ -69,3 +69,12 @@ scripts/*.min.css
 *.tmp
 *.temp
 .cache/
+.vercel
+
+# Auditoria: artefactos gerados (pesados, regeneráveis com `npm run audit`)
+audit/screens/
+audit/screens-*/
+audit/sections/
+audit/output/
+audit/*.json
+

@@ -1,0 +1,177 @@
+/* ============================================================
+   overlays.css — camada de elementos fixos / sobreposições
+   Carregado depois de components.css (antes de mobile.css)
+   ------------------------------------------------------------
+   Objectivo: garantir que os elementos position:fixed (header fixo,
+   .sticky-cta-mobile, .whatsapp-wrapper/.whatsapp-float/.whatsapp-tooltip)
+   nunca tapam conteúdo essencial em nenhum viewport (320 -> 1440) e
+   ficam sempre visíveis e clicáveis.
+
+   Bugs corrigidos nesta camada:
+     1. Header fixo (60px) sem compensação: destinos de âncora
+        (#areas, #faq, #contacto, ...) aterravam exactamente em y=0, isto
+        é, por baixo do header (medido: 8/8 âncoras na home em todos os
+        viewports), e na página contacto os h2 nasciam a y=24/45.
+     2. .sticky-cta-mobile (barra amarela, 54-57px) tapava o fim do
+        documento (formulário/footer), não respeitava a safe-area do
+        iPhone e ficava debaixo da bolha de WhatsApp (o dedo acertava no
+        WhatsApp em vez do CTA).
+     3. .whatsapp-tooltip com white-space:nowrap e right:72px saía do
+        viewport pela esquerda em ecrãs estreitos (a 320px cabia por 4px),
+        tapando o campo Email; em <=480px passa a ficar acima da bolha.
+     4. Não havia ordem explícita de z-index entre os overlays.
+
+   Regras da camada: variáveis de :root, sem !important, respeita
+   prefers-reduced-motion, não esconde conteúdo do utilizador.
+
+   Nota sobre !important alheio: fixes.css declara
+   .whatsapp-wrapper{bottom:24px!important} em <=768px e
+   .hero{padding-top:120px!important}; sem usar !important não é possível
+   reescrever essas propriedades, por isso o afastamento da bolha é feito
+   com margin-bottom (mesmo resultado de layout) e o hero não é tocado.
+   ============================================================ */
+
+:root {
+  /* geometria dos overlays */
+  --header-h: 60px;                 /* altura do header fixo medida */
+  --header-gap: 12px;               /* folga entre header e conteúdo âncora */
+  --cta-h: 58px;                    /* altura reservada para a barra de CTA mobile (medida: 54-57px) */
+  --overlay-gap: 16px;              /* folga mínima entre overlays */
+
+  /* safe-area (iPhone notch / home indicator) */
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  /* stack z-index explícito: header > CTA > WhatsApp */
+  --z-whatsapp: 1010;
+  --z-cta: 1020;
+  --z-header: 1030;
+}
+
+/* ------------------------------------------------------------
+   1. HEADER FIXO — compensação de altura
+   ------------------------------------------------------------
+   1a. [id] (secções e âncoras internas) ganha scroll-margin-top: um salto
+       de âncora aterra --header-h + folga abaixo do topo, em vez de por
+       baixo do header. Cobre section[id] e qualquer âncora [id].
+   1b. main reserva a altura do header: nenhum conteúdo nasce dentro da
+       zona do header. Na home o .hero é reposto com margem negativa para
+       manter o layout actual (o topo do hero fica sob o header, que é
+       opaco, exactamente como antes).
+   ------------------------------------------------------------ */
+html {
+  /* Com header fixo, o salto directo (sem animação) é o comportamento
+     previsível: a animação de scroll fazia o conteúdo atravessar a zona
+     do header. Os cliques em links # são tratados no JS do site com
+     scrollTo({behavior:'smooth'}), e esses continuam animados. */
+  scroll-behavior: auto;
+}
+
+[id] {
+  scroll-margin-top: calc(var(--header-h) + var(--header-gap));
+}
+
+main {
+  padding-top: var(--header-h);
+}
+
+main > .hero:first-child,
+main > section.hero:first-child {
+  margin-top: calc(-1 * var(--header-h));
+}
+
+.header {
+  z-index: var(--z-header);
+}
+
+/* ------------------------------------------------------------
+   2. BARRA DE CTA MOBILE (.sticky-cta-mobile)
+   ------------------------------------------------------------
+   2a. Reserva de espaço no fim do documento (dentro do footer, para não
+       criar uma faixa clara sob o rodapé) para o último conteúdo poder
+       ser lido acima da barra.
+   2b. A barra respeita a safe-area inferior.
+   2c. Ordem de z explícita: continua sempre visível e clicável — é a
+       principal conversão do site.
+   ------------------------------------------------------------ */
+.sticky-cta-mobile {
+  z-index: var(--z-cta);
+  padding-bottom: calc(14px + var(--safe-bottom));
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  footer > .container {
+    padding-bottom: calc(var(--cta-h) + var(--overlay-gap) + var(--safe-bottom));
+  }
+}
+
+/* ------------------------------------------------------------
+   3. WHATSAPP — bolha e tooltip
+   ------------------------------------------------------------
+   3a. Em <=768px a barra de CTA ocupa o fundo do ecrã: a bolha sobe o
+       suficiente para ficar totalmente acima dela (o dedo cai sempre no
+       CTA). Feito com margin-bottom porque `bottom` está fixado com
+       !important em fixes.css.
+   3b. O tooltip nunca sai do viewport: largura máxima + quebra de linha.
+   3c. Em <=480px o tooltip passa para cima da bolha (à esquerda não há
+       espaço) e não repete a dica automática.
+   ------------------------------------------------------------ */
+.whatsapp-wrapper {
+  z-index: var(--z-whatsapp);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-wrapper {
+    margin-bottom: calc(var(--cta-h) + var(--overlay-gap));
+    margin-right: var(--safe-right);
+  }
+}
+
+.whatsapp-tooltip {
+  max-width: min(70vw, 240px);
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-align: center;
+  line-height: 1.35;
+}
+
+@media (max-width: 480px) {
+  .whatsapp-tooltip {
+    /* acima da bolha, alinhado à direita, sempre dentro do ecrã */
+    right: 0;
+    left: auto;
+    top: auto;
+    bottom: calc(100% + 12px);
+    transform: translateX(0);
+    max-width: calc(100vw - 3 * var(--overlay-gap));
+    animation: none;
+  }
+
+  .whatsapp-tooltip::after {
+    /* seta passa a apontar para baixo (para a bolha) */
+    top: 100%;
+    right: 26px;
+    left: auto;
+    transform: none;
+    border: 6px solid transparent;
+    border-top-color: var(--color-primary);
+    border-left-color: transparent;
+  }
+}
+
+/* ------------------------------------------------------------
+   4. Acessibilidade: sem movimento quando o utilizador o pede
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .sticky-cta-mobile,
+  .whatsapp-tooltip {
+    transition: none;
+    animation: none;
+  }
+}
