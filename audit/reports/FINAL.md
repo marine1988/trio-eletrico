@@ -1,8 +1,8 @@
 # Trio Elétrico — Relatório final da ronda de correção (2026-09-15)
 
 **Âmbito:** revisão completa do site (mobile + tablet + desktop), correção dos bugs visuais e criação de um gate de QA que os apanhe no futuro.
-**Estado:** ✅ **Suite verde e determinística** — `npm run test` → **70 passed, 1 skipped, 0 failed**, duas corridas consecutivas.
-**Ficheiros:** 4 camadas CSS novas + 2 páginas + 2 specs novas + 4 snapshots atualizados. **Nada foi commitado** (aguarda ordem).
+**Estado:** ✅ **Publicado em produção** — https://trio-eletrico.vercel.app · suite verde e determinística (`npm run test` → 70 passed, 1 skipped, 0 failed, duas corridas consecutivas) · gate mobile contra produção 39/39.
+**Commits:** `ad9748e` (correções) · `4e352da` (vercel.json) · `9c2490b` (documentação de deploy) — todos enviados para `marine1988/trio-eletrico`.
 
 ---
 
