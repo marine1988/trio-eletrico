@@ -434,10 +434,9 @@
         }catch(e){}
     })();
     </script>
-    <script src="js/main.min.js" defer></script>
-    <script src="js/main.v1.min.js" defer></script>
-    <script src="js/main.v1.min.js" defer></script>
-    <script src="js/main.v1.min.js" defer></script>
+    <!-- Script único: a mesma referência estava repetida 4x (mais o antigo
+         main.min.js), pelo que o JS corria cinco vezes nesta página —
+         listeners, observers e autoplay do carrossel duplicados 5x. -->
     <script src="js/main.v1.min.js" defer></script>
 </head>
 <body>
