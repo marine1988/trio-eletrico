@@ -152,22 +152,25 @@ O harness mede, por combinação página×viewport: `hScroll`, `overflowRight`, 
 
 ## Deploy
 
-**Produção:** https://trio-eletrico.vercel.app (alias estável; também `trio-eletrico-marine1988s-projects.vercel.app`)
+**Produção:** https://trio-eletrico.vercel.app — projeto Vercel ligado ao repositório GitHub, com **auto-deploy: cada `git push` para `master` publica automaticamente**. Branches e PRs geram preview deployments.
 
 ```bash
-npx vercel deploy --prod --yes     # publica o estado atual da pasta (inclui os .v1.min gitignored)
-npx vercel login                   # se o token expirar (fluxo por dispositivo)
+git push origin master            # deploy automático (caminho normal)
+npx vercel deploy --prod --yes    # deploy manual, se necessário
+npx vercel login                  # se a sessão do CLI expirar (fluxo por dispositivo)
 ```
 
-**Verificar produção com o mesmo gate usado em desenvolvimento:**
+**Verificar produção com o mesmo gate usado em desenvolvimento (obrigatório após cada deploy):**
 
 ```bash
 PW_BASE=https://trio-eletrico.vercel.app npm run test:mobile
-PW_BASE=https://trio-eletrico.vercel.app node audit/audit.mjs https://trio-eletrico.vercel.app
+node audit/audit.mjs https://trio-eletrico.vercel.app
 node audit/verify-ux.mjs https://trio-eletrico.vercel.app   # 0 controlos bloqueados / 0 títulos sob o header
 ```
 
-As políticas de segurança (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`) estão em `vercel.json` — o `_headers` do Netlify **não** é lido pela Vercel.
+⚠️ **O que não pode ser verificado localmente:** ficheiros que existem no disco mas não no deploy (dão 404 só em produção) e referências duplicadas. Foi assim que apareceram dois bugs reais: o `js/main.min.js` do contacto a 404 (por estar excluído do deploy) e o `js/main.v1.min.js` referido 4×. **Sempre correr o gate contra o URL publicado.**
+
+O `.vercelignore` restringe o deploy ao que o site serve (exclui `audit/`, `tests/`, `scripts/` e fontes não servidas) — sem ele, os relatórios de auditoria ficam públicos. As políticas de segurança estão em `vercel.json` (o `_headers` do Netlify **não** é lido pela Vercel).
 
 ## Licença
 

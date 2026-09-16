@@ -1,8 +1,21 @@
 # Trio Elétrico — Relatório final da ronda de correção (2026-09-15)
 
 **Âmbito:** revisão completa do site (mobile + tablet + desktop), correção dos bugs visuais e criação de um gate de QA que os apanhe no futuro.
-**Estado:** ✅ **Publicado em produção** — https://trio-eletrico.vercel.app · suite verde e determinística (`npm run test` → 70 passed, 1 skipped, 0 failed, duas corridas consecutivas) · gate mobile contra produção 39/39.
-**Commits:** `ad9748e` (correções) · `4e352da` (vercel.json) · `9c2490b` (documentação de deploy) — todos enviados para `marine1988/trio-eletrico`.
+**Estado:** ✅ **Publicado em produção com auto-deploy ligado ao Git** — https://trio-eletrico.vercel.app · cada `git push` para `master` publica automaticamente · suite verde (`npm run test` → 70 passed, 1 skipped, 0 failed, duas corridas) · gate contra produção **39/39**.
+**Commits:** `ad9748e` (correções) · `4e352da` (vercel.json) · `9c2490b`, `85a10ec` (docs) · `078aca6` (versionar os `.v1.min`) · `d3fb8e9` (fechar a auditoria no deploy) · `6458fcd` (teste do auto-deploy) · `baa1fca` (scripts duplicados do contacto).
+
+---
+
+## Ronda 2 — integração com o Git (o que apareceu depois de publicar)
+
+| # | Achado | Gravidade | Correção |
+|---|---|---|---|
+| 1 | **A auditoria estava pública:** `/audit/reports/FINAL.md` e `/playwright.config.js` respondiam HTTP 200 na internet (o CLI sobe o sistema de ficheiros local e a pasta `audit/` não estava excluída) | Alta (exposição de notas internas) | `.vercelignore` a excluir auditoria, testes, scripts, fontes não servidas e configs de dev; redeploy + verificado a 404 |
+| 2 | **O build a partir do Git sairia sem o CSS principal:** `css/style.v1.min.css` (50 KB) e `js/main.v1.min.js` estavam no `.gitignore` e **não existiam no repositório** — exatamente a regressão que deixou o contacto sem estilos | Crítica (bloqueava a ligação ao Git) | Pre-flight a comparar os recursos pedidos pelas páginas com `git ls-files` (faltavam só 2 de 15); re-incluídos explicitamente no `.gitignore` e versionados |
+| 3 | **`contacto.html` tinha 5 tags de script:** `main.min.js` (versão de Jun 2026, excluída do deploy → **404 em produção**) + `js/main.v1.min.js` repetido **4×** — o JS corria 5 vezes (listeners/observers/autoplay duplicados) e, em produção, a página ficava **sem JS** | Alta | Uma única referência; verificado: 1 pedido HTTP, 0 erros, dark mode a funcionar no contacto |
+| 4 | **Nenhum destes 3 bugs era detetável localmente** (o ficheiro existia no disco, o servidor local servia-o) | — | O gate a correr **contra produção** (`PW_BASE=URL npm run test:mobile`) apanhou os dois últimos: 37/39 → 39/39 |
+
+**Verificação do artefacto construído pelo Git** (não pelo CLI): md5 local == servido em `index.html`, `contacto.html`, `style.v1.min.css`, `style.min.css`, `fixes/components/overlays/mobile.css`, `main.v1.min.js` e `site.webmanifest`; internos a 404; headers de segurança aplicados; gate 39/39; auditoria de 14 viewports com 320-768 = OK nas duas páginas.
 
 ---
 
